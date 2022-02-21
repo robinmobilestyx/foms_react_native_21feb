@@ -123,6 +123,7 @@ class LawsSearch extends Component {
   //     }
 
   LawSection_searchActs(query) {
+
     if (query === '') {
       return [];
     }
@@ -134,6 +135,7 @@ class LawsSearch extends Component {
     for (let i = 0; i < actlength; i++) {
       acttitle[i] = Global_Attributes.LawSection['acttitle'][i];
     }
+
     const regex = new RegExp(`${query}`, 'i');
     const act = acttitle.filter(data => data.search(regex) >= 0);
 
@@ -147,6 +149,7 @@ class LawsSearch extends Component {
     });
 
     return actArray;
+
   }
 
   LawSection_lawDescription = item => {
@@ -344,13 +347,15 @@ class LawsSearch extends Component {
         {!PonOffence ? (
           <>
             <View style={LawsParentTitleStyle.searchSection}>
+
               <Autocomplete
                 autoCorrect={false}
+                selectionColor={'black'}
                 autoFocus={this.state.LawSectionfocus}
                 containerStyle={LawsParentTitleStyle.autocompleteContainer}
                 inputContainerStyle={LawsParentTitleStyle.inputContainer}
                 placeholder="Search Acts"
-                placeholderTextColor="#000000"
+                placeholderTextColor={"#000000"}
                 onChangeText={text => {
                   this.handleLawSectionSearch(text);
                 }}
@@ -361,7 +366,9 @@ class LawsSearch extends Component {
                 source={require('../assets/search.png')}
                 style={LawsParentTitleStyle.searchIcon}
               />
+
             </View>
+            
             <Modal
               visible={this.state.modalVisible}
               onTouchOutside={() => {

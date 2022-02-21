@@ -522,8 +522,9 @@ class PonReports extends Component {
           <SafeAreaView style={{flex: 1}}>
             <View style={{flexDirection: 'row'}}>
               <TextInput
+                selectionColor={'black'}
                 placeholder="Search Tickets"
-                placeholderTextColor={{color: 'black'}}
+                placeholderTextColor={'black'}
                 style={TicketsStyle.textinput}
                 onChangeText={text =>
                   this.setState({searchVal: text})
