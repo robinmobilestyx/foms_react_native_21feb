@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Scanner">
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#000000"
+        android:id="@+id/framelayout"
+        >
+        <androidx.camera.view.PreviewView
+            android:layout_height="100dp"
+            android:layout_width="600dp"
+            android:layout_gravity="center"
+            android:id="@+id/preview">
+            </androidx.camera.view.PreviewView>
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+
+            >
+
+            <ImageView
+                android:id="@+id/scanImage"
+                android:layout_width="600dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/background_image" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:text="Make sure the Bar Code is in the focus area and the camera is stable.\n(Tap on Bar Code if required )"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/barcode_scanner_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/refresh_icon" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

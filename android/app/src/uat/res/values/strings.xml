@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UAT FOMS</string>
+    <color name="semitransparent">#9A000000</color>
+    <color name="colorPrimary">#11246F</color>
+    <color name="colorWhite">#fff</color>
+
+</resources>
