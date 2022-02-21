@@ -156,7 +156,6 @@ class LawsSearch extends Component {
     
     var sec_reg = /:\s(.+)/.exec(item)[1];
     var index = Global_Attributes.LawSection['acttitle'].indexOf(sec_reg);
-
     var actno = Global_Attributes.LawSection['actno'][index];
     var acttitle = Global_Attributes.LawSection['acttitle'][index];
     var setfine = Global_Attributes.LawSection['actsetfine'][index];
@@ -368,7 +367,7 @@ class LawsSearch extends Component {
               />
 
             </View>
-            
+
             <Modal
               visible={this.state.modalVisible}
               onTouchOutside={() => {

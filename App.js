@@ -22,10 +22,7 @@ import appJson from './app.json';
 import Logout from './Activity/Dashboard/Logout';
 import PonReports from './Activity/Reports/PonReports';
 import PonWarning from './Activity/Reports/PonWarning';
-import PonReleaseForm from './Activity/Reports/PonReleaeForm';
-import PonSummons from './Activity/Reports/PonSummons';
 import LawsSearch from './Activity/Laws/LawsSearch';
-import LawsTest from './Activity/Laws/LawsTest';
 import LawsParentTitle from './Activity/Laws/LawsParentTitle';
 import LawsDescription from './Activity/Laws/LawsDescription';
 import LawsActTitle from './Activity/Laws/LawsActTitle';
@@ -138,15 +135,12 @@ TextInput.defaultProps = {
                    <Stack.Screen name="PonPreview" component={PonPreview} options={{headerRight: () => {return <Logout/>}}}/>
                    
                    <Stack.Screen name="Print" component={Print} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="LawsParentTitle" component={LawsParentTitle} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="LawsActTitle" component={LawsActTitle} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="LawsDescription" component={LawsDescription} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="PonReports" component={PonReports} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="PonWarning" component={PonWarning} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="PonReleaseForm" component={PonReleaseForm} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="PonSummons" component={PonSummons} options={{headerLeft: () => {return <></>} }}/>
+                   <Stack.Screen name="LawsParentTitle" component={LawsParentTitle} options={{headerRight: () => {return <Logout/>}}}/>
+                   <Stack.Screen name="LawsActTitle" component={LawsActTitle} options={{headerRight: () => {return <Logout/>}}}/>
+                   <Stack.Screen name="LawsDescription" component={LawsDescription} options={{headerRight: () => {return <Logout/>}}}/>
+                   <Stack.Screen name="PonReports" component={PonReports} options={{headerRight: () => {return <Logout/>}}}/>
+                   <Stack.Screen name="PonWarning" component={PonWarning} options={{headerRight: () => {return <Logout/>}}}/>
                    <Stack.Screen name="LawsSearch" component={LawsSearch} options={{headerLeft: () => {return <></>} }}/>
-                   <Stack.Screen name="LawsTest" component={LawsTest} options={{headerShown: false}}/>
                     
                   </Stack.Navigator>
                   <ModalPortal/>

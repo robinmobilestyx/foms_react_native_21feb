@@ -29,7 +29,7 @@ import UpdateUserDataController from '../Controller/UpdateUserDataController';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Loader from './Loader';
 
-export default class Profile extends Component {
+ class Profile extends Component {
   constructor() {
     super();
     this.backAction = this.backAction.bind(this);
@@ -220,12 +220,16 @@ export default class Profile extends Component {
             </View>
             <View style={styles.textInputView}>
               <TextInput
-                style={styles.firstnametextInput}
+                style={{
+                  width: wp('42%'),
+                  backgroundColor: '#F9F6F6',
+                  color: this.state.editable ? 'grey': null
+                }}
                 label={'First Name'}
                 value={this.state.fname}
                 onChangeText={text => this.setState({fname: text})}
                 clearButtonMode="always"
-                underlineColor={'#11246F'}
+                underlineColor={this.state.editable ? '#000000': null}
                 selectionColor={'#11246F'}
                 editable={this.state.editable}></TextInput>
               <TextInput
@@ -234,7 +238,7 @@ export default class Profile extends Component {
                 value={this.state.lname}
                 onChangeText={text => this.setState({lname: text})}
                 clearButtonMode="always"
-                underlineColor={'#11246F'}
+                underlineColor={this.state.editable ? '#000000': null}
                 selectionColor={'#11246F'}
                 editable={this.state.editable}></TextInput>
             </View>
@@ -403,10 +407,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     bottom: hp('11%'),
   },
-  firstnametextInput: {
-    width: wp('42%'),
-    backgroundColor: '#F9F6F6',
-  },
+  // firstnametextInput: {
+  //   width: wp('42%'),
+  //   backgroundColor: '#F9F6F6',
+  // },
   lastnametextInput: {
     width: wp('42%'),
     backgroundColor: '#F9F6F6',
@@ -440,3 +444,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 });
+
+
+export default Profile;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   View,
   Text,
@@ -13,7 +14,9 @@ import {
 import LawsDescriptionStyle from '../Css/LawsDescriptionStyle';
 
 class LawsDescription extends React.Component {
+
   render() {
+    
     const actno = this.props.route.params.actno;
     const acttitle = this.props.route.params.acttitle;
     const payment = this.props.route.params.payment;

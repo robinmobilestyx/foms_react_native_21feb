@@ -1001,10 +1001,11 @@ export default class PonOffence extends Component {
 
                 <TextInput
                   value={this.state.fine}
+                  style={ponsoffnStyle.boxstyle}
                   mode="outlined"
                   outlineColor="#11246F"
                   selectionColor={'#7B7B7B'}
-                  style={ponsoffnStyle.boxstyle}
+                  onChangeText={text => this.setState({fine: text})}
                 />
 
                 {/* <TextInput value={this.state.fine} style={ponsoffnStyle.boxstyle} ></TextInput> */}
@@ -1021,9 +1022,12 @@ export default class PonOffence extends Component {
                 <TextInput
                   value={this.state.payable}
                   mode="outlined"
+                  style={ponsoffnStyle.boxstyle}
                   outlineColor="#11246F"
                   selectionColor={'#7B7B7B'}
-                  style={ponsoffnStyle.boxstyle}></TextInput>
+                  onChangeText={text => this.setState({payable: text})}
+                  >
+                </TextInput>
                 {/* <TextInput value={this.state.payable} style={ponsoffnStyle.boxstyle}></TextInput> */}
               </View>
             </View>

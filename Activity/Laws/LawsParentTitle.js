@@ -43,12 +43,14 @@ class LawsParentTitle extends Component {
         pass: pass,
         id: id,
       };
+
       const abc = await new LawsController().handleClick(
         numberVerBody,
         this.props,
         type,
         Global_Attributes.laws,
       );
+      
       abc;
 
       this.setState({isLoading: false});
