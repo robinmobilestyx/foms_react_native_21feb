@@ -73,8 +73,7 @@ const LawsParentTitleStyle = StyleSheet.create({
         fontSize: 18,
         fontWeight: '700',
         marginLeft: 10,
-        
-        fontFamily:Global_Attributes.fixfontstyle
+        marginBottom:10
     },
 
     downarrow: {

@@ -60,7 +60,6 @@ const PERMISSION_TYPE = {
 };
 
 export default class PonOffence extends Component {
-
   constructor(props) {
     super(props);
 
@@ -70,7 +69,6 @@ export default class PonOffence extends Component {
     this.back = this.back.bind(this);
 
     this.state = {
-
       motorInvolved: Global_Attributes.PonOneBean['motorInvolved'],
       collision: Global_Attributes.PonOneBean['collision'],
       withnesses: Global_Attributes.PonOneBean['withnesses'],
@@ -115,8 +113,8 @@ export default class PonOffence extends Component {
       totalPayable: '',
       AT: '',
       NEAR: '',
-      attextinputvalue: Global_Attributes.PonOneBean['atOne'] ,
-      neartextinputvalue: Global_Attributes.PonOneBean['atTwo'] ,
+      attextinputvalue: Global_Attributes.PonOneBean['atOne'],
+      neartextinputvalue: Global_Attributes.PonOneBean['atTwo'],
       open: false,
       value: null,
       items: null,
@@ -272,8 +270,7 @@ export default class PonOffence extends Component {
   }
 
   setBeans = () => {
-    console.log("neartextvalue: ", this.state.neartextinputvalue)
-
+    console.log('neartextvalue: ', this.state.neartextinputvalue);
 
     Global_Attributes.PonOneBean['motorInvolved'] = this.state.motorInvolved;
     Global_Attributes.PonOneBean['withnesses'] = this.state.withnesses;
@@ -305,15 +302,14 @@ export default class PonOffence extends Component {
     Global_Attributes.PonOneBean['speedingCb'] = this.state.speedingCb;
     Global_Attributes.PonOneBean['schld2Rb'] = this.state.schld2Rb;
     Global_Attributes.PonOneBean['issuedDate'] = this.state.issuedDate;
-    
-    console.log("global atribute: ", Global_Attributes.PonOneBean['atTwo'])
-     
+
+    console.log('global atribute: ', Global_Attributes.PonOneBean['atTwo']);
+
     this.props.navigation.navigate('PonPreview');
 
     console.log(
       'chckbox value' + Global_Attributes.PonOneBean['motorInvolved'],
     );
-
   };
 
   componentDidMount() {
@@ -361,7 +357,6 @@ export default class PonOffence extends Component {
       'PonOffence',
       Global_Attributes.laws,
     );
-
   };
 
   AT = searchvalue => {
@@ -390,7 +385,6 @@ export default class PonOffence extends Component {
   };
 
   NEAR = searchvalue => {
-
     if (searchvalue) {
       var user = Global_Attributes.User;
       var pass = Global_Attributes.Pass;
@@ -413,7 +407,6 @@ export default class PonOffence extends Component {
         nearmodalVisible: true,
         NEARfocus: true,
       });
-
     } else {
       this.setState({NEAR: '', nearmodalVisible: false, NEARfocus: true});
     }
@@ -455,11 +448,11 @@ export default class PonOffence extends Component {
       fields.push('Plate Number');
     }
 
-    return fields;``
+    return fields;
+    ``;
   };
 
   next = () => {
-
     if (this.state.attextinputvalue == '') {
       alert('Please check address !');
     } else if (Global_Attributes.PonOneBean['didCommit'] == '') {
@@ -493,11 +486,9 @@ export default class PonOffence extends Component {
         this.setBeans();
       }
     }
-
   };
 
   prevLocation = async () => {
-
     Global_Attributes.loading = true;
     this.setState({isLoading: true});
 
@@ -519,7 +510,6 @@ export default class PonOffence extends Component {
       'prevLocation',
       Global_Attributes.prsLocation,
     );
-
   };
 
   renderSeparator = () => {
@@ -807,8 +797,7 @@ export default class PonOffence extends Component {
                 <TouchableOpacity onPress={() => this.prevLocation()}>
                   <Image
                     style={ponsoffnStyle.refr_img}
-                    source={prevsLocation}>
-                  </Image>
+                    source={prevsLocation}></Image>
                 </TouchableOpacity>
               </View>
             </View>
@@ -892,7 +881,6 @@ export default class PonOffence extends Component {
             </View>
 
             <View style={ponsoffnStyle.secCheckboxView}>
-
               <View style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
                 {/* <View style={{ flex:0.5, flexDirection: 'row' }}> */}
                 <Text style={ponsoffnStyle.cvorText}>CVOR</Text>
@@ -967,8 +955,7 @@ export default class PonOffence extends Component {
                     labelStyle={{
                       color: '#11246F',
                       fontFamily: Global_Attributes.fixfontstyle,
-                    }}>
-                  </CheckBox>
+                    }}></CheckBox>
                   {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
                 </View>
               </View>
@@ -1025,9 +1012,9 @@ export default class PonOffence extends Component {
                   style={ponsoffnStyle.boxstyle}
                   outlineColor="#11246F"
                   selectionColor={'#7B7B7B'}
-                  onChangeText={text => this.setState({payable: text})}
-                  >
-                </TextInput>
+                  onChangeText={text =>
+                    this.setState({payable: text})
+                  }></TextInput>
                 {/* <TextInput value={this.state.payable} style={ponsoffnStyle.boxstyle}></TextInput> */}
               </View>
             </View>

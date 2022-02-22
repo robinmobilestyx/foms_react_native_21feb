@@ -168,6 +168,7 @@ const previewStyle = StyleSheet.create({
     margin: '3%',
     height: 55,
     fontSize: 12,
+    color:'#d3d3d3'
   },
 
   inputTextStyleThree: {

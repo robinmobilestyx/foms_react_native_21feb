@@ -13,8 +13,8 @@ const TicketsComponentStyle = StyleSheet.create({
     // marginBottom: 27
   },
   offender_officer_court_button: {
-    margin: 15,
-    width: '27%',
+    margin: 6,
+    width: '29%',
     alignContent: 'center',
     justifyContent: 'center',
   },
@@ -26,7 +26,7 @@ const TicketsComponentStyle = StyleSheet.create({
     borderRadius: 10,
     fontWeight: 'bold',
     padding: 11,
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: Global_Attributes.fixfontstyle,
   },
   cancel_roadside_button: {

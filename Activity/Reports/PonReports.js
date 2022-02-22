@@ -46,6 +46,7 @@ const PERMISSION_TYPE = {
 };
 
 class PonReports extends Component {
+  
   constructor(props) {
     super(props);
 
@@ -69,7 +70,9 @@ class PonReports extends Component {
       newtickets: {},
       count: 1,
       status: '',
+      isLoading: Global_Attributes.loading,
     };
+
   }
 
   checkPermission = async type => {
@@ -307,11 +310,15 @@ class PonReports extends Component {
   NextBtn = async () => {
     this.setState({count: this.state.count + 1, searchVal: ''});
     this.Search_btn();
+    Global_Attributes.loading = true;
+    this.setState({isLoading: true});
   };
 
   PrevBtn = () => {
     this.setState({count: this.state.count - 1, searchVal: ''});
     this.Search_btn();
+    Global_Attributes.loading = true;
+    this.setState({isLoading: true});
   };
 
   Search_btn = async () => {
@@ -339,6 +346,9 @@ class PonReports extends Component {
       'PonReports',
       Global_Attributes.RSGetTicketDetails,
     );
+
+    Global_Attributes.loading = true;
+    this.setState({isLoading: true});
 
   };
 
@@ -424,7 +434,7 @@ class PonReports extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+            <View style={{flexDirection: 'row', alignSelf:'center'}}>
               <TouchableOpacity
                 onPress={() => {
                   this.props.navigation.navigate('Print', {
@@ -521,6 +531,7 @@ class PonReports extends Component {
         ) : (
           <SafeAreaView style={{flex: 1}}>
             <View style={{flexDirection: 'row'}}>
+
               <TextInput
                 selectionColor={'black'}
                 placeholder="Search Tickets"
@@ -537,6 +548,7 @@ class PonReports extends Component {
                 }}>
                 <Text style={TicketsStyle.search_button_text}>SEARCH</Text>
               </TouchableOpacity>
+
             </View>
 
             <View style={TicketsStyle.flatListconatiner}>

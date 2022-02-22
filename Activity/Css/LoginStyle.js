@@ -37,13 +37,11 @@ const externalStyle = StyleSheet.create({
     textAlign: 'center',
     fontSize: 14,
     color: '#ffff',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   forgotText: {
     fontSize: 13,
     fontWeight: 'bold',
     color: '#11246f',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   Btn: {
@@ -80,7 +78,6 @@ const externalStyle = StyleSheet.create({
     width: 200,
     padding: 0,
     borderColor: '#11246F',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   text: {
@@ -88,7 +85,6 @@ const externalStyle = StyleSheet.create({
     fontSize: 25,
     color: '#11246F',
     alignItems: 'center',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   image: {
@@ -109,7 +105,6 @@ const externalStyle = StyleSheet.create({
     top: 40,
     color: 'black',
     textAlign: 'center',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   
   loader: {

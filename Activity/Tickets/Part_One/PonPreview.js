@@ -219,6 +219,10 @@ export default class PonPreview extends Component {
                 style={previewStyle.inputTextStyleTwo}
                 value={Global_Attributes.PonOneBean['date']}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="DATE"
                 underlineColor={'#7B7B7B'}>
               </TextInput>
@@ -239,6 +243,10 @@ export default class PonPreview extends Component {
                 style={previewStyle.inputTextStyleTwo}
                 value={Global_Attributes.PonOneBean['time']}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="TIME"
                 underlineColor={'#7B7B7B'}></TextInput>
               <Image
@@ -261,6 +269,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleThree}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['family']}
                 label="FAMILY*"
                 underlineColor={'#7B7B7B'}>
@@ -271,6 +283,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleThree}
                 editable={false}
+                 theme={{
+                colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="GIVEN"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['given']}></TextInput>
@@ -280,6 +296,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleThree}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="INITIALS"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['initials']}></TextInput>
@@ -292,6 +312,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['street']}
                 label="NUMBER AND STREET"
                 underlineColor={'#7B7B7B'}></TextInput>
@@ -300,6 +324,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="MUNCIPALITY"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['muncipality']}></TextInput>
@@ -311,6 +339,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleThree}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['po']}
                 label="PO"
                 underlineColor={'#7B7B7B'}></TextInput>
@@ -319,6 +351,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleThree}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['province']}
                 label="PROVINCE"
                 underlineColor={'#7B7B7B'}></TextInput>
@@ -327,6 +363,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleThree}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['postl']}
                 label="POSTAL CODE"
                 underlineColor={'#7B7B7B'}></TextInput>
@@ -338,6 +378,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['lisenceNumber']}
                 label="DRIVERS LICENSE NUMBER"
                 underlineColor={'#7B7B7B'}></TextInput>
@@ -346,6 +390,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['juris']}
                 // theme={{ colors: { text: "#11246F",} }}
                 label="JURIS"
@@ -357,6 +405,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 value={Global_Attributes.PonOneBean['dob']}
                 label="DATE OF BIRTH"
                 underlineColor={'#7B7B7B'}></TextInput>
@@ -467,6 +519,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="AT*"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['atOne']}></TextInput>
@@ -476,6 +532,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="NEAR"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['atTwo']}></TextInput>
@@ -487,6 +547,10 @@ export default class PonPreview extends Component {
             <TextInput
               style={previewStyle.blankInputTextStyle}
               editable={false}
+              theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
               underlineColor={'#7B7B7B'}
               value={Global_Attributes.PonOneBean['atThree']}></TextInput>
           </View>
@@ -495,6 +559,10 @@ export default class PonPreview extends Component {
             <TextInput
               style={previewStyle.inputTextStyle}
               editable={false}
+              theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
               label="CONTRARY TO"
               underlineColor={'#7B7B7B'}
               value={Global_Attributes.PonOneBean['contrary']}></TextInput>
@@ -503,6 +571,10 @@ export default class PonPreview extends Component {
             <TextInput
               style={previewStyle.inputTextStyle}
               editable={false}
+              theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
               label="DID COMMIT"
               underlineColor={'#7B7B7B'}
               value={Global_Attributes.PonOneBean['didCommit']}></TextInput>
@@ -512,6 +584,10 @@ export default class PonPreview extends Component {
             <TextInput
               style={previewStyle.inputTextStyle}
               editable={false}
+              theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
               label="SECT"
               underlineColor={'#7B7B7B'}
               value={Global_Attributes.PonOneBean['sect']}>
@@ -524,6 +600,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="PLATE NUMBER"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['plateNumber']}>
@@ -534,6 +614,10 @@ export default class PonPreview extends Component {
               <TextInput
                 style={previewStyle.inputTextStyleTwo}
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 label="JURIS"
                 underlineColor={'#7B7B7B'}
                 value={Global_Attributes.PonOneBean['juris']}>
@@ -546,6 +630,10 @@ export default class PonPreview extends Component {
             <TextInput
               style={previewStyle.inputTextStyle}
               editable={false}
+              theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
               label="CODE"
               underlineColor={'#7B7B7B'}
               value={Global_Attributes.PonOneBean['code']}></TextInput>
@@ -632,6 +720,10 @@ export default class PonPreview extends Component {
                 style={previewStyle.inputTextStyle}
                 label="CVOR/NSC Number*"
                 underlineColor={'#7B7B7B'}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 editable={false}
                 value={Global_Attributes.PonOneBean['covrNumer']}></TextInput>
             </View>
@@ -645,6 +737,10 @@ export default class PonPreview extends Component {
                 mode="outlined"
                 outlineColor="#11246F"
                 selectionColor={'#7B7B7B'}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 style={previewStyle.boxstyle}
                 value={Global_Attributes.PonOneBean['fine']}></TextInput>
             </View>
@@ -654,6 +750,10 @@ export default class PonPreview extends Component {
               </Text>
               <TextInput
                 editable={false}
+                theme={{
+              colors: {
+                    text: '#7B7B7B',
+                 }}}
                 mode="outlined"
                 outlineColor="#11246F"
                 selectionColor={'#7B7B7B'}

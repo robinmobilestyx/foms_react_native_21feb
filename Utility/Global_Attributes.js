@@ -45,9 +45,7 @@ export default class Global_Attributes extends Component {
     static RSSummonUploadNotes = `${baseAPiUrl}Cases/summon3_officer_notes`;
     static RSSummonCancelRoadSide = `${baseAPiUrl}ticket/change_ticket_status`;
     static Scrolling = true;
-    static fixfontstyle='Roboto';
-
-
+    
     static PonOneBean = {
 
         date: new Date().getFullYear() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getDate(),

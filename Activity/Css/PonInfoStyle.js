@@ -1,8 +1,11 @@
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+
 import {StyleSheet} from 'react-native';
+
 import Global_Attributes from '../../Utility/Global_Attributes';
 
 const ponstyle = StyleSheet.create({
@@ -40,7 +43,6 @@ const ponstyle = StyleSheet.create({
   loc_code_text: {
     color: '#11246F',
     fontWeight: 'bold',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   loc_code_no: {
@@ -75,7 +77,6 @@ const ponstyle = StyleSheet.create({
   offr_name: {
     color: '#000000',
     padding: '4%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   main_view_status: {
@@ -102,7 +103,6 @@ const ponstyle = StyleSheet.create({
     textAlign: 'center',
     marginStart: '23%',
     bottom: '20%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   sec_status: {
@@ -114,7 +114,6 @@ const ponstyle = StyleSheet.create({
     textAlign: 'center',
     alignSelf: 'center',
     bottom: '55%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   third_status: {
@@ -127,7 +126,6 @@ const ponstyle = StyleSheet.create({
     bottom: '86%',
     alignSelf: 'flex-end',
     marginRight: '24%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   info_txt: {
@@ -135,7 +133,6 @@ const ponstyle = StyleSheet.create({
     bottom: '80%',
     start: '23%',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   offn_txt: {
@@ -143,7 +140,6 @@ const ponstyle = StyleSheet.create({
     bottom: '105%',
     alignSelf: 'center',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   review_txt: {
@@ -151,7 +147,6 @@ const ponstyle = StyleSheet.create({
     bottom: '130%',
     start: '68%',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   flash_view: {
@@ -166,7 +161,6 @@ const ponstyle = StyleSheet.create({
   sdl_txt: {
     color: '#11246F',
     marginTop: '5%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   flash_txt: {
@@ -175,15 +169,14 @@ const ponstyle = StyleSheet.create({
     right: 10,
     left: 18,
     marginRight: 20,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   scan_btn: {
     borderWidth: 1.2,
     borderColor: '#11246F',
     borderRadius: 9,
-    height: '80%',
-    width: 110,
+    height: '70%',
+    width: '30%',
     alignSelf: 'center',
     marginStart: '2%',
   },
@@ -192,16 +185,17 @@ const ponstyle = StyleSheet.create({
     color: '#11246F',
     textAlign: 'left',
     marginTop: '10%',
-    marginStart: '4%',
+    marginStart: '10%',
+    fontWeight:'bold',
     position: 'absolute',
-    width: '50%',
-    fontFamily: Global_Attributes.fixfontstyle,
+    // width: '50%',
   },
 
   scan_img: {
     height: '100%',
-    width: '40%',
-    alignSelf: 'flex-end',
+    width: '30%',
+    // alignSelf: 'center',
+    marginLeft:'60%'
   },
 
   main_text_view: {
@@ -243,7 +237,6 @@ const ponstyle = StyleSheet.create({
     margin: '5%',
     fontSize: 12,
     color: '#11246F',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   inputTextStyleThreeView: {
@@ -258,7 +251,6 @@ const ponstyle = StyleSheet.create({
     backgroundColor: '#ffffff',
     margin: '6%',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   mainbirthView: {
@@ -276,7 +268,6 @@ const ponstyle = StyleSheet.create({
     paddingLeft: '4%',
     fontSize: 12,
     color: '#11246F',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   sec_gend_view: {
@@ -303,8 +294,8 @@ const ponstyle = StyleSheet.create({
     width: '30%',
     borderRadius: 10,
     margin: '4%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
+  
 });
 
 export default ponstyle;

@@ -25,16 +25,12 @@ const LawsActTitleStyle = StyleSheet.create({
         fontSize: 18,
         fontWeight: '700',
         marginLeft: 5,
-       
-        fontFamily:Global_Attributes.fixfontstyle
     },
     lawcontenttext: {
         margin: 8,
         fontSize: 15,
         fontWeight: '700',
         color: '#000000',
-      
-        fontFamily:Global_Attributes.fixfontstyle
     },
     downarrow: {
         height: 25,

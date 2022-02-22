@@ -29,7 +29,7 @@ import UpdateUserDataController from '../Controller/UpdateUserDataController';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Loader from './Loader';
 
- class Profile extends Component {
+class Profile extends Component {
   constructor() {
     super();
     this.backAction = this.backAction.bind(this);
@@ -223,22 +223,31 @@ import Loader from './Loader';
                 style={{
                   width: wp('42%'),
                   backgroundColor: '#F9F6F6',
-                  color: this.state.editable ? 'grey': null
                 }}
                 label={'First Name'}
+                theme={{
+                  colors: {
+                    text: this.state.editable ? 'black' : '#7B7B7B',
+                  },
+                }}
                 value={this.state.fname}
                 onChangeText={text => this.setState({fname: text})}
                 clearButtonMode="always"
-                underlineColor={this.state.editable ? '#000000': null}
+                underlineColor={this.state.editable ? '#000000' : null}
                 selectionColor={'#11246F'}
                 editable={this.state.editable}></TextInput>
               <TextInput
                 style={styles.lastnametextInput}
                 label={'Last Name'}
                 value={this.state.lname}
+                theme={{
+                  colors: {
+                    text: this.state.editable ? 'black' : '#7B7B7B',
+                  },
+                }}
                 onChangeText={text => this.setState({lname: text})}
                 clearButtonMode="always"
-                underlineColor={this.state.editable ? '#000000': null}
+                underlineColor={this.state.editable ? '#000000' : null}
                 selectionColor={'#11246F'}
                 editable={this.state.editable}></TextInput>
             </View>
@@ -444,6 +453,5 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 });
-
 
 export default Profile;

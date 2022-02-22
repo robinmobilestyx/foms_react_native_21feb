@@ -28,7 +28,6 @@ const LawsDescriptionStyle = StyleSheet.create({
         color: '#272f65',
         alignSelf: 'center',
         alignContent: 'center',
-        fontFamily:Global_Attributes.fixfontstyle
     },
 
     lawsacttitletext: {
@@ -39,7 +38,6 @@ const LawsDescriptionStyle = StyleSheet.create({
         marginLeft: 25,
         alignSelf: 'stretch',
         color: 'black',
-        fontFamily:Global_Attributes.fixfontstyle
     },
 
     lawssetfinetext: {
@@ -49,7 +47,6 @@ const LawsDescriptionStyle = StyleSheet.create({
         marginLeft: 25,
         alignSelf: 'stretch',
         color: 'black',
-        fontFamily:Global_Attributes.fixfontstyle
     },
 
     lawspayabletext: {
@@ -59,7 +56,6 @@ const LawsDescriptionStyle = StyleSheet.create({
         marginLeft: 25,
         alignSelf: 'stretch',
         color: 'black',
-        fontFamily:Global_Attributes.fixfontstyle
     },
 
     lawsdemeritspointtext: {
@@ -69,7 +65,6 @@ const LawsDescriptionStyle = StyleSheet.create({
         marginLeft: 25,
         alignSelf: 'stretch',
         color: 'black',
-        fontFamily:Global_Attributes.fixfontstyle
     },
 
     lawsdescriptiontext: {
@@ -79,7 +74,6 @@ const LawsDescriptionStyle = StyleSheet.create({
         fontWeight: '500',
         alignSelf: 'stretch',
         color: 'black',
-        fontFamily:Global_Attributes.fixfontstyle
     },
     
 });

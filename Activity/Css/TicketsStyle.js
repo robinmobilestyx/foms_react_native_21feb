@@ -1,6 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import Global_Attributes from '../../Utility/Global_Attributes';
 
 const TicketsStyle = StyleSheet.create({
 
@@ -16,7 +14,7 @@ const TicketsStyle = StyleSheet.create({
         color:'black'
     },
     search_button: {
-        right: 10,
+        right: 7,
         top: 8,
         width: "25%"
     },
@@ -24,11 +22,10 @@ const TicketsStyle = StyleSheet.create({
         fontSize: 13,
         backgroundColor: '#112470',
         color: '#ffffff',
-        padding: 13,
+        padding: 10,
         borderRadius: 8,
         textAlign: 'center',
-        fontFamily:Global_Attributes.fixfontstyle
-        
+        fontWeight:'bold'
     },
     flatListconatiner: {
         flex: 1,
@@ -39,8 +36,6 @@ const TicketsStyle = StyleSheet.create({
         marginBottom: 55,
         marginLeft: 5,
         marginRight: 5,
-        // width: wp("100%")
-
     },
     bottom_container: {
         flex: 0.1,

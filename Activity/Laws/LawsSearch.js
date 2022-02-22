@@ -229,6 +229,7 @@ class LawsSearch extends Component {
       Global_Attributes.PonLaws['act_no'][index];
     Global_Attributes.PonOneBean['didCommit'] =
       Global_Attributes.PonLaws['act_title'][index];
+      this.props.callBackFunction();
     return Global_Attributes.PonLaws['act_no'][index];
   };
 
@@ -243,6 +244,7 @@ class LawsSearch extends Component {
       Global_Attributes.PonLaws['act_title'][index];
     Global_Attributes.PonOneBean['sect'] =
       Global_Attributes.PonLaws['act_no'][index];
+      this.props.callBackFunction();
     return Global_Attributes.PonLaws['act_title'][index];
   };
 
@@ -475,7 +477,6 @@ class LawsSearch extends Component {
                     style={{
                       fontSize: 12,
                       color: 'black',
-                      fontFamily: Global_Attributes.fixfontstyle,
                     }}
                   />
                   <Image
@@ -661,7 +662,8 @@ const styles = StyleSheet.create({
   },
   DidCommitFlatList: {
     // flex:1,
-    height: 300,
+    height:300,
+    // maxHeight: hp('20%'),
     shadowColor: 'black',
     shadowOpacity: 0.5,
     flexDirection: 'row',

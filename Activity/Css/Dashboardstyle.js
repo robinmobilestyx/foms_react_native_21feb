@@ -56,7 +56,6 @@ const Dashboardstyle = StyleSheet.create({
     textAlignVertical: 'center',
     marginLeft: 5,
     marginRight: 5,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   gridImage: {
     height: 40,

@@ -14,12 +14,26 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Global_Attributes from '../../Utility/Global_Attributes';
 import FooterController from '../Controller/FooterController';
 import Loader from '../Dashboard/Loader';
-
 import DashboardFooterStyle from '../Css/DashboardFooterStyle';
+import Dialog from "react-native-dialog";
 
 function DashboardFooter() {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const showDialog = () => {
+    setVisible(true);
+  };
+
+  const handleCancel = () => {
+    Linking.openURL('mailto:support@mobilestyx.co.in')
+    setVisible(false);
+  };
+
+  const handleDelete = () => {
+    setVisible(false);
+  };
 
   getHelpData = async () => {
     try {
@@ -87,19 +101,30 @@ function DashboardFooter() {
         <TouchableOpacity
           activeOpacity={0.9}
           onPress={() => {
-            Alert.alert(
-              'Information',
-              ' To contact support,email us at\n\n support@mobilestyx.co.in',
-              [
-                {
-                  text: 'Go To Mail',
-                  onPress: () =>
-                    Linking.openURL('mailto:support@mobilestyx.co.in'),
-                },
-                {text: 'Cancel', onPress: () => console.log('OK Pressed')},
-              ],
-            );
+            showDialog()
+            // Alert.alert(
+            //   'Information',
+            //   ' To contact support,email us at\n\n support@mobilestyx.co.in',
+            //   [
+            //     {
+            //       text: 'Go To Mail',
+            //       onPress: () =>
+            //         Linking.openURL('mailto:support@mobilestyx.co.in'),
+            //     },
+            //     {text: 'Cancel', onPress: () => console.log('OK Pressed')},
+            //   ],
+            // );
           }}>
+
+        <Dialog.Container visible={visible}>
+        <Dialog.Title>Information</Dialog.Title>
+        <Dialog.Description>
+          To contact support,email us at\n\n support@mobilestyx.co.in
+        </Dialog.Description>
+        <Dialog.Button label="Go To MAIL" onPress={handleCancel} color="#05249d" />
+        <Dialog.Button label="Cancel" onPress={handleDelete} color="#05249d"  />
+        </Dialog.Container>
+
           <Image
             style={DashboardFooterStyle.image}
             source={require('../assets/support.png')}
@@ -107,6 +132,7 @@ function DashboardFooter() {
           <Text style={DashboardFooterStyle.text}>Support</Text>
         </TouchableOpacity>
       </View>
+
     </View>
   );
 }

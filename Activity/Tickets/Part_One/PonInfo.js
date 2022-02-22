@@ -24,6 +24,7 @@ import Geolocation from 'react-native-geolocation-service';
 import ponstyle from '../../Css/PonInfoStyle';
 import DashboardFooter from '../../Dashboard/DashboardFooter';
 import Scanner from '../../Dashboard/Scanner';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const New_DL_CustomerFirstName = 'DAC',
   New_DL_CustomerMiddleName = 'DAD',
@@ -64,6 +65,7 @@ var allKeys = [
 var myData = {};
 
 export default class PonInfo extends Component {
+  
   constructor(props) {
     super(props);
 
@@ -444,6 +446,7 @@ export default class PonInfo extends Component {
 
     return (
       <SafeAreaView style={ponstyle.mainView}>
+     
         <ScrollView
           scrollEnabled={true}
           nestedScrollEnabled={true}
@@ -825,6 +828,7 @@ export default class PonInfo extends Component {
           navigation={navigation}
           style={{position: 'absolute', bottom: 0}}
         />
+      
       </SafeAreaView>
     );
   }
