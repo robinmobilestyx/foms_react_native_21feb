@@ -23,7 +23,7 @@ const ponstyle = StyleSheet.create({
     // marginTop: '3%',
     // backgroundColor: '#FFFFFF',
     // paddingBottom:'10%'
-    flex: 1,
+    flex: 0.9,
     alignSelf: 'center',
     margin: '1%',
     marginTop: '3%',

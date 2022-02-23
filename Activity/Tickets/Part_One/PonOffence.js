@@ -527,6 +527,7 @@ export default class PonOffence extends Component {
   };
 
   render() {
+    
     const {navigation} = this.props;
     const {didCommit, sect, keyboardStatus} = this.state;
 
