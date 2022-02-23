@@ -1,39 +1,6 @@
-// import React, { Component } from 'react';
-// import { SafeAreaView, StyleSheet, View,Image,Text, TextInput, TouchableOpacity,ActivityIndicator,Alert} from 'react-native';
-
-// export default class Loader extends Component{
-//     render(){
-//         return(
-//             <View style={styles.mainContainer}>
-                
-//              <ActivityIndicator size="large" 
-//                    animating={true}
-//                     color={"#11246F"}>
-//                     </ActivityIndicator>
-//                    <Text>Please wait! This may take a moment.</Text>
-//             </View>
-            
-//         );
-//     }
-// }
-
-// const styles = StyleSheet.create({
-//     mainContainer:{
-    
-//     backgroundColor:'#ffffff',
-//     height:60,
-//     width:300,
-//     borderRadius:8,
-//     borderWidth:1,
-//     borderColor:"#D81B60",
-//      alignSelf:"center",
-//      alignItems:"center",
-//      justifyContent:"center",
-    
-//     }
-// })
 import React, { Component,useEffect,useState } from 'react';
 import Global_Attributes from '../../Utility/Global_Attributes';
+
 import {
   StyleSheet,
   View,

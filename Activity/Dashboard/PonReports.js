@@ -21,7 +21,6 @@ import Global_Attributes from '../../Utility/Global_Attributes';
 import {TicketListController} from '../Controller/TicketListController';
 
 class PonReports_old extends Component {
-    
   constructor(props) {
     super(props);
     this.state = {

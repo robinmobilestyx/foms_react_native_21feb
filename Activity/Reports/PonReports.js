@@ -131,6 +131,7 @@ class PonReports extends Component {
       }
 
       return result === RESULTS.GRANTED;
+      
     } catch (error) {
       console.log('App permission result fail ' + error);
       return false;

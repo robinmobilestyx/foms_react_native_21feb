@@ -24,7 +24,7 @@ import Geolocation from 'react-native-geolocation-service';
 import ponstyle from '../../Css/PonInfoStyle';
 import DashboardFooter from '../../Dashboard/DashboardFooter';
 import Scanner from '../../Dashboard/Scanner';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 
 const New_DL_CustomerFirstName = 'DAC',
   New_DL_CustomerMiddleName = 'DAD',
@@ -65,6 +65,7 @@ var allKeys = [
 var myData = {};
 
 export default class PonInfo extends Component {
+
   constructor(props) {
     super(props);
 
@@ -96,6 +97,7 @@ export default class PonInfo extends Component {
       bde: new Date(new Date().setFullYear(new Date().getFullYear() - 16)),
       keyboardStatus: 'Keyboard Hidden',
     };
+
   }
 
   checkBoxChanged() {
@@ -137,6 +139,7 @@ export default class PonInfo extends Component {
             }
           }
         }
+
         console.log(myData[City]);
         if (myData[Customer_Family_Name] != undefined) {
           const family = myData[Customer_Family_Name].split(',');
@@ -343,9 +346,11 @@ export default class PonInfo extends Component {
   };
 
   checkPermission = async type => {
+
     const permission = REQUEST_PERMISSION_TYPE[type][Platform.OS];
 
     console.log('permission', permission);
+
     if (!permission) {
       return true;
     }
@@ -361,6 +366,7 @@ export default class PonInfo extends Component {
     } catch (error) {
       console.log('error while check' + error);
     }
+
   };
 
   requestPermission = async permission => {
@@ -424,9 +430,11 @@ export default class PonInfo extends Component {
     this.setState({dobCal: Platform.OS === 'ios'});
     this.setState({dob: BdDate});
     this.setState({bd: selectedDate});
+
   };
 
   render() {
+    
     const {navigation} = this.props;
     const {keyboardStatus, bd} = this.state;
     let current = this.state.currDate;

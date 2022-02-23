@@ -527,7 +527,6 @@ export default class PonOffence extends Component {
   };
 
   render() {
-    
     const {navigation} = this.props;
     const {didCommit, sect, keyboardStatus} = this.state;
 
@@ -1063,6 +1062,7 @@ export default class PonOffence extends Component {
                       fontWeight: 'bold',
                       color: '#11246F',
                       alignSelf: 'flex-start',
+                      marginTop: '2%',
                     }}>
                     BY CHECKING THIS BOX, I ACKNOWLEDGE THAT I HAVE REVIEWED ALL
                     THE INFORMATION CONTAINED WITHIN THIS DOCUMENT AND CONFIRM

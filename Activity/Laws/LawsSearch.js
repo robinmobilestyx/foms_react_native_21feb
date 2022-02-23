@@ -35,7 +35,6 @@ import {Popover, PopoverContainer} from 'react-native-simple-popover';
 import {ScrollView} from 'react-native-gesture-handler';
 
 class LawsSearch extends Component {
-
   static propTypes = {
     actlength: PropTypes.number,
     PonOffence: PropTypes.bool.isRequired,
@@ -73,7 +72,6 @@ class LawsSearch extends Component {
       popoverPlacement: 'auto',
       isPopoverVisible: false,
     };
-
   }
 
   componentDidMount() {
@@ -123,7 +121,6 @@ class LawsSearch extends Component {
   //     }
 
   LawSection_searchActs(query) {
-
     if (query === '') {
       return [];
     }
@@ -149,11 +146,9 @@ class LawsSearch extends Component {
     });
 
     return actArray;
-
   }
 
   LawSection_lawDescription = item => {
-    
     var sec_reg = /:\s(.+)/.exec(item)[1];
     var index = Global_Attributes.LawSection['acttitle'].indexOf(sec_reg);
     var actno = Global_Attributes.LawSection['actno'][index];
@@ -173,7 +168,6 @@ class LawsSearch extends Component {
       description: description,
       demerit_points: demerits,
     });
-
   };
 
   PonOffence_searchActs = (query, bool) => {
@@ -229,7 +223,7 @@ class LawsSearch extends Component {
       Global_Attributes.PonLaws['act_no'][index];
     Global_Attributes.PonOneBean['didCommit'] =
       Global_Attributes.PonLaws['act_title'][index];
-      this.props.callBackFunction();
+    this.props.callBackFunction();
     return Global_Attributes.PonLaws['act_no'][index];
   };
 
@@ -244,7 +238,7 @@ class LawsSearch extends Component {
       Global_Attributes.PonLaws['act_title'][index];
     Global_Attributes.PonOneBean['sect'] =
       Global_Attributes.PonLaws['act_no'][index];
-      this.props.callBackFunction();
+    this.props.callBackFunction();
     return Global_Attributes.PonLaws['act_title'][index];
   };
 
@@ -336,7 +330,6 @@ class LawsSearch extends Component {
   closePopover = () => this.setState({showPopover: false});
 
   render() {
-
     const {query, query1} = this.state;
     const actArray = this.LawSection_searchActs(query);
     const act_title = this.PonOffence_searchActs(query, true);
@@ -348,7 +341,6 @@ class LawsSearch extends Component {
         {!PonOffence ? (
           <>
             <View style={LawsParentTitleStyle.searchSection}>
-
               <Autocomplete
                 autoCorrect={false}
                 selectionColor={'black'}
@@ -356,7 +348,7 @@ class LawsSearch extends Component {
                 containerStyle={LawsParentTitleStyle.autocompleteContainer}
                 inputContainerStyle={LawsParentTitleStyle.inputContainer}
                 placeholder="Search Acts"
-                placeholderTextColor={"#000000"}
+                placeholderTextColor={'#000000'}
                 onChangeText={text => {
                   this.handleLawSectionSearch(text);
                 }}
@@ -367,7 +359,6 @@ class LawsSearch extends Component {
                 source={require('../assets/search.png')}
                 style={LawsParentTitleStyle.searchIcon}
               />
-
             </View>
 
             <Modal
@@ -662,7 +653,7 @@ const styles = StyleSheet.create({
   },
   DidCommitFlatList: {
     // flex:1,
-    height:300,
+    height: 300,
     // maxHeight: hp('20%'),
     shadowColor: 'black',
     shadowOpacity: 0.5,

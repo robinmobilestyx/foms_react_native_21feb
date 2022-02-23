@@ -113,7 +113,7 @@ class Print extends Component {
 
     //   }
   };
-  
+
   backAction() {
     this.props.navigation.replace('Dashboard');
     return true;
@@ -128,7 +128,6 @@ class Print extends Component {
   }
 
   render() {
-
     var url = {uri: this.props.route.params.url};
     var module = this.props.route.params.module;
 
