@@ -16,12 +16,20 @@ const ponstyle = StyleSheet.create({
   },
 
   Scrollview: {
+    // alignSelf: 'center',
+    // height: '95%',
+    // width: '95%',
+    // marginBottom: '20%',
+    // marginTop: '3%',
+    // backgroundColor: '#FFFFFF',
+    // paddingBottom:'10%'
+    flex: 1,
     alignSelf: 'center',
-    height: hp('95%'),
-    width: wp('95%'),
-    marginBottom: '20%',
+    margin: '1%',
     marginTop: '3%',
+    width: '95%',
     backgroundColor: '#FFFFFF',
+    marginBottom: '20%',
   },
 
   bottomView: {

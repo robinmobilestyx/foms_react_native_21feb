@@ -24,7 +24,7 @@ import Geolocation from 'react-native-geolocation-service';
 import ponstyle from '../../Css/PonInfoStyle';
 import DashboardFooter from '../../Dashboard/DashboardFooter';
 import Scanner from '../../Dashboard/Scanner';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const New_DL_CustomerFirstName = 'DAC',
   New_DL_CustomerMiddleName = 'DAD',
@@ -65,7 +65,6 @@ var allKeys = [
 var myData = {};
 
 export default class PonInfo extends Component {
-  
   constructor(props) {
     super(props);
 
@@ -375,6 +374,7 @@ export default class PonInfo extends Component {
       return false;
     }
   };
+
   showDatepicker = () => {
     // this.showMode('date');
     this.setState({show: true});
@@ -427,7 +427,6 @@ export default class PonInfo extends Component {
   };
 
   render() {
-
     const {navigation} = this.props;
     const {keyboardStatus, bd} = this.state;
     let current = this.state.currDate;
@@ -442,394 +441,416 @@ export default class PonInfo extends Component {
 
     let cTime = hours + ':' + current.getMinutes() + ' ' + am_pm;
 
-    let cDate = current.getFullYear() + '/' + (current.getMonth() + 1) + '/' + current.getDate();
+    let cDate =
+      current.getFullYear() +
+      '/' +
+      (current.getMonth() + 1) +
+      '/' +
+      current.getDate();
 
     return (
       <SafeAreaView style={ponstyle.mainView}>
-     
-        <ScrollView
-          scrollEnabled={true}
-          nestedScrollEnabled={true}
-          style={ponstyle.Scrollview}>
-          {/* <View style={ponstyle.respobox}> */}
+        <KeyboardAvoidingView
+          style={styles.keyboard}
+          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+          enabled
+          keyboardVerticalOffset={35}>
+          <ScrollView
+            scrollEnabled={true}
+            nestedScrollEnabled={true}
+            style={ponstyle.Scrollview}>
+            {/* <View style={ponstyle.respobox}> */}
 
-          <View style={ponstyle.locationView}>
-            <View style={ponstyle.loc_code_view}>
-              <Text style={ponstyle.loc_code_text}>Location Code</Text>
-              <Text style={ponstyle.loc_code_no}>
-                {Global_Attributes.PonOneBean['locationCode']}
-              </Text>
-            </View>
-            <View style={ponstyle.offn_views}></View>
-            <View style={ponstyle.offn_view}>
-              <Text style={ponstyle.loc_code_text}>Offence Number</Text>
-              <Text style={ponstyle.loc_code_no1}>
-                {Global_Attributes.PonOneBean['formatted']}
-              </Text>
-            </View>
-          </View>
-
-          <View style={ponstyle.offr_name_view}>
-            <Text style={ponstyle.offr_name}>
-              Officer Name : {Global_Attributes.PonOneBean['officerName']}
-            </Text>
-          </View>
-
-          <View style={ponstyle.main_view_status}>
-            <View style={ponstyle.view_status}></View>
-            <Text style={ponstyle.first_status}>1</Text>
-            <Text style={ponstyle.sec_status}>2</Text>
-            <Text style={ponstyle.third_status}>3</Text>
-            <Text style={ponstyle.info_txt}>Info</Text>
-            <Text style={ponstyle.offn_txt}>Offence</Text>
-            <Text style={ponstyle.review_txt}>Review</Text>
-          </View>
-
-          <View style={ponstyle.main_text_view}>
-            <View style={ponstyle.main_text_views}>
-              <TextInput
-                style={ponstyle.inputTextStyleTwo}
-                label="DATE"
-                labelStyle={{color: ''}}
-                underlineColor={'#000000'}
-                value={cDate}
-                theme={{colors: {text: '#11246F'}}}
-                onChangeText={text => {
-                  this.setState({date: text});
-                }}
-                onFocus={this.showDatepicker}
-                keyboardType="numeric"></TextInput>
-              <Image
-                source={require('../../assets/ic_menu_my_calendar.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  position: 'absolute',
-                  left: 130,
-                  bottom: 6,
-                }}
-              />
-            </View>
-
-            <View style={ponstyle.main_text_views}>
-              <TextInput
-                style={ponstyle.inputTextStyleTwo}
-                label="TIME"
-                underlineColor={'#000000'}
-                theme={{colors: {text: '#11246F'}}}
-                onFocus={this.showTimepicker}
-                onChangeText={text => {
-                  this.setState({time: text});
-                }}
-                value={cTime}
-                keyboardType="numeric"></TextInput>
-              <Image
-                source={require('../../assets/ic_menu_my_calendar.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  position: 'absolute',
-                  left: 130,
-                  bottom: 6,
-                }}
-              />
-            </View>
-          </View>
-
-          <View style={ponstyle.flash_view}>
-
-            <Text style={ponstyle.sdl_txt}>Scan Driving License</Text>
-
-            <View style={{left: 18}}>
-              <Checkbox
-                onValueChange={() => this.checkBoxChanged()}
-                labelStyle={{color: '#11246F'}}
-                checked={this.state.flash}
-                style={{marginTop: '5%', alignSelf: 'center', marginLeft: 10}}
-                // boxStyle={{borderColor:'#A9A9A9'}}
-                checkedBackgroundColor={'#11246F'}
-                checkedBorderColor={'#11246F'}
-                borderWidth={2}
-                checkMarkColor={'white'}
-                checkMarkSize={16}
-                // checkMarkColor={'black'}
-                animationType={'left'}
-                unCheckedBorderColor={'#808080'}
-                size={16}
-                rippleEffect={false}>
-              </Checkbox>
-            </View>
-
-          <Text style={ponstyle.flash_txt}>Flash</Text>
-
-            <View style={ponstyle.scan_btn}>
-              <TouchableOpacity
-                onPress={() => {
-                  this.discoverDeviceHandler(this.state.flash);
-                }}>
-                <Text style={ponstyle.scan_txt}>SCAN</Text>
-                <Image source={camera} style={ponstyle.scan_img}></Image>
-              </TouchableOpacity>
-            </View>
-
-          </View>
-
-          <View style={ponstyle.main_text_view}>
-            <View style={ponstyle.inputTextStyleThreeView}>
-              <TextInput
-                style={ponstyle.inputTextStyleThree}
-                label="FAMILY*"
-                underlineColor={'#000000'}
-                value={this.state.family}
-                onChangeText={text =>
-                  this.setState({family: text})
-                }></TextInput>
-            </View>
-
-            <View style={ponstyle.inputTextStyleThreeView}>
-              <TextInput
-                style={ponstyle.inputTextStyleThree}
-                label="GIVEN"
-                underlineColor={'#000000'}
-                value={this.state.given}
-                onChangeText={text => this.setState({given: text})}></TextInput>
-            </View>
-
-            <View style={ponstyle.inputTextStyleThreeView}>
-              <TextInput
-                style={ponstyle.inputTextStyleThree}
-                label="INITIALS"
-                underlineColor={'#000000'}
-                value={this.state.initials}
-                onChangeText={text =>
-                  this.setState({initials: text})
-                }></TextInput>
-            </View>
-          </View>
-
-          <View style={ponstyle.main_text_view}>
-            <View style={ponstyle.main_text_views}>
-              <TextInput
-                style={ponstyle.inputTextStyleTwo}
-                label={
-                  <Text
-                    style={{
-                      width: '20%',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}>
-                    NUMBER AND STREET
-                  </Text>
-                }
-                underlineColor={'#000000'}
-                value={this.state.street}
-                onChangeText={text =>
-                  this.setState({street: text})
-                }></TextInput>
-            </View>
-            <View style={ponstyle.main_text_views}>
-              <TextInput
-                style={ponstyle.inputTextStyleTwo}
-                label="MUNCIPALITY"
-                underlineColor={'#000000'}
-                value={this.state.muncipality}
-                onChangeText={text =>
-                  this.setState({muncipality: text})
-                }></TextInput>
-            </View>
-          </View>
-
-          <View style={ponstyle.main_text_view}>
-            <View style={ponstyle.inputTextStyleThreeView}>
-              <TextInput
-                style={ponstyle.inputTextStyleThree}
-                label="PO"
-                underlineColor={'#000000'}
-                value={this.state.po}
-                onChangeText={text => this.setState({po: text})}></TextInput>
-            </View>
-            <View style={ponstyle.inputTextStyleThreeView}>
-              <TextInput
-                style={ponstyle.inputTextStyleThree}
-                label="PROVINCE"
-                underlineColor={'#000000'}
-                value={this.state.province}
-                onChangeText={text =>
-                  this.setState({province: text})
-                }></TextInput>
-            </View>
-            <View style={ponstyle.inputTextStyleThreeView}>
-              <TextInput
-                style={ponstyle.inputTextStyleThree}
-                label="POSTAL CODE"
-                underlineColor={'#000000'}
-                value={this.state.postl}
-                onChangeText={text => this.setState({postl: text})}></TextInput>
-            </View>
-          </View>
-
-          <View style={ponstyle.main_text_view}>
-            <View style={ponstyle.main_text_views}>
-              <TextInput
-                style={{
-                  height: 55,
-                  width: '115%',
-                  backgroundColor: '#ffffff',
-                  margin: '5%',
-                  fontSize: 12,
-                  color: '#11246F',
-                }}
-                maxLength={17}
-                label="DRIVERS LICENSE NUMBER"
-                underlineColor={'#000000'}
-                labelStyle={{}}
-                value={this.state.lisenceNumber}
-                onChangeText={text =>
-                  this.setState({lisenceNumber: text})
-                }></TextInput>
-            </View>
-
-            <View style={ponstyle.main_text_views}>
-              <TextInput
-                style={{
-                  height: 55,
-                  //   width: '46%',
-                  marginLeft: 50,
-                  backgroundColor: '#ffffff',
-                  margin: '5%',
-                  fontSize: 12,
-                }}
-                label="JURIS"
-                value="ON"
-                theme={{colors: {text: '#11246F'}}}
-                underlineColor={'#000000'}
-                value={this.state.juris}
-                onChangeText={text => this.setState({juris: text})}></TextInput>
-            </View>
-          </View>
-
-          <View style={ponstyle.main_text_view}>
-            <View style={ponstyle.birthView}>
-              <TextInput
-                style={ponstyle.inputTextStyleTwo}
-                label="DATE OF BIRTH"
-                underlineColor={'#000000'}
-                labelStyle={{}}
-                editable={true}
-                value={
-                  bd &&
-                  bd.getFullYear() +
-                    '/' +
-                    (bd.getMonth() + 1) +
-                    '/' +
-                    bd.getDate()
-                }
-                onFocus={() => this.setState({dobCal: true})}
-                onChangeText={text => this.setState({dob: text})}></TextInput>
-              <Image
-                source={require('../../assets/ic_menu_my_calendar.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  position: 'absolute',
-                  left: 130,
-                  bottom: 7,
-                }}
-              />
-            </View>
-
-            <View style={ponstyle.gend_view}>
-              <Text style={ponstyle.sex_txt}>SEX*</Text>
-
-              <View style={ponstyle.sec_gend_view}>
-                <RadioButton.Group
-                  onValueChange={value => this.setState({gender: value})}
-                  value={this.state.gender}>
-                  <View style={{flexDirection: 'row'}}>
-                    <RadioButton value="M" color="#11246F"></RadioButton>
-                    <Text
-                      style={{
-                        alignSelf: 'center',
-                        color: '#11246F',
-                        fontSize: 12,
-                        fontFamily: Global_Attributes.fixfontstyle,
-                      }}>
-                      M
-                    </Text>
-                    <RadioButton value="F" color="#11246F"></RadioButton>
-                    <Text
-                      style={{
-                        alignSelf: 'center',
-                        color: '#11246F',
-                        fontSize: 12,
-                        fontFamily: Global_Attributes.fixfontstyle,
-                      }}>
-                      F
-                    </Text>
-                    <RadioButton value="O" color="#11246F"></RadioButton>
-                    <Text
-                      style={{
-                        alignSelf: 'center',
-                        color: '#11246F',
-                        fontSize: 12,
-                        fontFamily: Global_Attributes.fixfontstyle,
-                      }}>
-                      OTHER
-                    </Text>
-                  </View>
-                </RadioButton.Group>
+            <View style={ponstyle.locationView}>
+              <View style={ponstyle.loc_code_view}>
+                <Text style={ponstyle.loc_code_text}>Location Code</Text>
+                <Text style={ponstyle.loc_code_no}>
+                  {Global_Attributes.PonOneBean['locationCode']}
+                </Text>
+              </View>
+              <View style={ponstyle.offn_views}></View>
+              <View style={ponstyle.offn_view}>
+                <Text style={ponstyle.loc_code_text}>Offence Number</Text>
+                <Text style={ponstyle.loc_code_no1}>
+                  {Global_Attributes.PonOneBean['formatted']}
+                </Text>
               </View>
             </View>
-          </View>
 
-          <View style={ponstyle.nxt_btnView}>
-            <View style={ponstyle.nxt_btnView1}></View>
-            <View style={ponstyle.nxt_btnView2}>
-              <Button
-                mode="contained"
-                style={ponstyle.nxt_btn}
-                // style={{
-                //     backgroundColor: '#30D20D', alignSelf: 'flex-end', width: '30%'
-                //     , marginEnd: 12, marginTop: 25, borderRadius: 10
-                // }}
-                onPress={() => {
-                  this.next();
-                }}>
-                NEXT
-              </Button>
+            <View style={ponstyle.offr_name_view}>
+              <Text style={ponstyle.offr_name}>
+                Officer Name : {Global_Attributes.PonOneBean['officerName']}
+              </Text>
             </View>
-          </View>
 
-          {this.state.show && (
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={this.state.currDate}
-              mode={this.state.mode}
-              is24Hour={false}
-              display="default"
-              onChange={this.onDateTimeChange}
-              maximumDate={new Date()}
-            />
-          )}
-          {this.state.dobCal ? (
-            <DateTimePicker
-              testID="datePicker"
-              value={this.state.bde}
-              mode="date"
-              display="default"
-              onChange={this.dobChange}
-              maximumDate={this.state.bde}
-            />
-          ) : null}
+            <View style={ponstyle.main_view_status}>
+              <View style={ponstyle.view_status}></View>
+              <Text style={ponstyle.first_status}>1</Text>
+              <Text style={ponstyle.sec_status}>2</Text>
+              <Text style={ponstyle.third_status}>3</Text>
+              <Text style={ponstyle.info_txt}>Info</Text>
+              <Text style={ponstyle.offn_txt}>Offence</Text>
+              <Text style={ponstyle.review_txt}>Review</Text>
+            </View>
 
-          {/* </View> */}
-        </ScrollView>
+            <View style={ponstyle.main_text_view}>
+              <View style={ponstyle.main_text_views}>
+                <TextInput
+                  style={ponstyle.inputTextStyleTwo}
+                  label="DATE"
+                  labelStyle={{color: ''}}
+                  underlineColor={'#000000'}
+                  value={cDate}
+                  theme={{colors: {text: '#11246F'}}}
+                  onChangeText={text => {
+                    this.setState({date: text});
+                  }}
+                  onFocus={this.showDatepicker}
+                  keyboardType="numeric"></TextInput>
+                <Image
+                  source={require('../../assets/ic_menu_my_calendar.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    position: 'absolute',
+                    left: 130,
+                    bottom: 6,
+                  }}
+                />
+              </View>
 
+              <View style={ponstyle.main_text_views}>
+                <TextInput
+                  style={ponstyle.inputTextStyleTwo}
+                  label="TIME"
+                  underlineColor={'#000000'}
+                  theme={{colors: {text: '#11246F'}}}
+                  onFocus={this.showTimepicker}
+                  onChangeText={text => {
+                    this.setState({time: text});
+                  }}
+                  value={cTime}
+                  keyboardType="numeric"></TextInput>
+                <Image
+                  source={require('../../assets/ic_menu_my_calendar.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    position: 'absolute',
+                    left: 130,
+                    bottom: 6,
+                  }}
+                />
+              </View>
+            </View>
+
+            <View style={ponstyle.flash_view}>
+
+              <Text style={ponstyle.sdl_txt}>Scan Driving License</Text>
+
+              <View style={{left: 18}}>
+                <Checkbox
+                  onValueChange={() => this.checkBoxChanged()}
+                  labelStyle={{color: '#11246F'}}
+                  checked={this.state.flash}
+                  style={{marginTop: '5%', alignSelf: 'center', marginLeft: 10}}
+                  // boxStyle={{borderColor:'#A9A9A9'}}
+                  checkedBackgroundColor={'#11246F'}
+                  checkedBorderColor={'#11246F'}
+                  borderWidth={2}
+                  checkMarkColor={'white'}
+                  checkMarkSize={16}
+                  // checkMarkColor={'black'}
+                  animationType={'left'}
+                  unCheckedBorderColor={'#808080'}
+                  size={16}
+                  rippleEffect={false}>
+                </Checkbox>
+              </View>
+
+              <Text style={ponstyle.flash_txt}>Flash</Text>
+
+              <View style={ponstyle.scan_btn}>
+                <TouchableOpacity
+                  onPress={() => {
+                    this.discoverDeviceHandler(this.state.flash);
+                  }}>
+                  <Text style={ponstyle.scan_txt}>SCAN</Text>
+                  <Image source={camera} style={ponstyle.scan_img}></Image>
+                </TouchableOpacity>
+              </View>
+
+            </View>
+
+            <View style={ponstyle.main_text_view}>
+              <View style={ponstyle.inputTextStyleThreeView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleThree}
+                  label="FAMILY*"
+                  underlineColor={'#000000'}
+                  value={this.state.family}
+                  onChangeText={text =>
+                    this.setState({family: text})
+                  }></TextInput>
+              </View>
+
+              <View style={ponstyle.inputTextStyleThreeView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleThree}
+                  label="GIVEN"
+                  underlineColor={'#000000'}
+                  value={this.state.given}
+                  onChangeText={text =>
+                    this.setState({given: text})
+                  }></TextInput>
+              </View>
+
+              <View style={ponstyle.inputTextStyleThreeView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleThree}
+                  label="INITIALS"
+                  underlineColor={'#000000'}
+                  value={this.state.initials}
+                  onChangeText={text =>
+                    this.setState({initials: text})
+                  }></TextInput>
+              </View>
+            </View>
+
+            <View style={ponstyle.main_text_view}>
+              <View style={ponstyle.main_text_views}>
+                <TextInput
+                  style={ponstyle.inputTextStyleTwo}
+                  label={
+                    <Text
+                      style={{
+                        width: '20%',
+                        fontFamily: Global_Attributes.fixfontstyle,
+                      }}>
+                      NUMBER AND STREET
+                    </Text>
+                  }
+                  underlineColor={'#000000'}
+                  value={this.state.street}
+                  onChangeText={text =>
+                    this.setState({street: text})
+                  }></TextInput>
+              </View>
+              <View style={ponstyle.main_text_views}>
+                <TextInput
+                  style={ponstyle.inputTextStyleTwo}
+                  label="MUNCIPALITY"
+                  underlineColor={'#000000'}
+                  value={this.state.muncipality}
+                  onChangeText={text =>
+                    this.setState({muncipality: text})
+                  }></TextInput>
+              </View>
+            </View>
+
+            <View style={ponstyle.main_text_view}>
+              <View style={ponstyle.inputTextStyleThreeView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleThree}
+                  label="PO"
+                  underlineColor={'#000000'}
+                  value={this.state.po}
+                  onChangeText={text => this.setState({po: text})}></TextInput>
+              </View>
+              <View style={ponstyle.inputTextStyleThreeView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleThree}
+                  label="PROVINCE"
+                  underlineColor={'#000000'}
+                  value={this.state.province}
+                  onChangeText={text =>
+                    this.setState({province: text})
+                  }></TextInput>
+              </View>
+              <View style={ponstyle.inputTextStyleThreeView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleThree}
+                  label="POSTAL CODE"
+                  underlineColor={'#000000'}
+                  value={this.state.postl}
+                  onChangeText={text =>
+                    this.setState({postl: text})
+                  }></TextInput>
+              </View>
+            </View>
+
+            <View style={ponstyle.main_text_view}>
+              <View style={ponstyle.main_text_views}>
+                <TextInput
+                  style={{
+                    height: 55,
+                    width: '115%',
+                    backgroundColor: '#ffffff',
+                    margin: '5%',
+                    fontSize: 12,
+                    color: '#11246F',
+                  }}
+                  maxLength={17}
+                  label="DRIVERS LICENSE NUMBER"
+                  underlineColor={'#000000'}
+                  labelStyle={{}}
+                  value={this.state.lisenceNumber}
+                  onChangeText={text =>
+                    this.setState({lisenceNumber: text})
+                  }></TextInput>
+              </View>
+
+              <View style={ponstyle.main_text_views}>
+                <TextInput
+                  style={{
+                    height: 55,
+                    //   width: '46%',
+                    marginLeft: 50,
+                    backgroundColor: '#ffffff',
+                    margin: '5%',
+                    fontSize: 12,
+                  }}
+                  label="JURIS"
+                  value="ON"
+                  theme={{colors: {text: '#11246F'}}}
+                  underlineColor={'#000000'}
+                  value={this.state.juris}
+                  onChangeText={text =>
+                    this.setState({juris: text})
+                  }></TextInput>
+              </View>
+            </View>
+
+            <View style={ponstyle.main_text_view}>
+              <View style={ponstyle.birthView}>
+                <TextInput
+                  style={ponstyle.inputTextStyleTwo}
+                  label="DATE OF BIRTH"
+                  underlineColor={'#000000'}
+                  labelStyle={{}}
+                  editable={true}
+                  value={
+                    bd &&
+                    bd.getFullYear() +
+                      '/' +
+                      (bd.getMonth() + 1) +
+                      '/' +
+                      bd.getDate()
+                  }
+                  onFocus={() => this.setState({dobCal: true})}
+                  onChangeText={text => this.setState({dob: text})}></TextInput>
+                <Image
+                  source={require('../../assets/ic_menu_my_calendar.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    position: 'absolute',
+                    left: 130,
+                    bottom: 7,
+                  }}
+                />
+              </View>
+
+              <View style={ponstyle.gend_view}>
+                <Text style={ponstyle.sex_txt}>SEX*</Text>
+
+                <View style={ponstyle.sec_gend_view}>
+                  <RadioButton.Group
+                    onValueChange={value => this.setState({gender: value})}
+                    value={this.state.gender}>
+                    <View style={{flexDirection: 'row'}}>
+                      <RadioButton value="M" color="#11246F"></RadioButton>
+                      <Text
+                        style={{
+                          alignSelf: 'center',
+                          color: '#11246F',
+                          fontSize: 12,
+                          fontFamily: Global_Attributes.fixfontstyle,
+                        }}>
+                        M
+                      </Text>
+                      <RadioButton value="F" color="#11246F"></RadioButton>
+                      <Text
+                        style={{
+                          alignSelf: 'center',
+                          color: '#11246F',
+                          fontSize: 12,
+                          fontFamily: Global_Attributes.fixfontstyle,
+                        }}>
+                        F
+                      </Text>
+                      <RadioButton value="O" color="#11246F"></RadioButton>
+                      <Text
+                        style={{
+                          alignSelf: 'center',
+                          color: '#11246F',
+                          fontSize: 12,
+                          fontFamily: Global_Attributes.fixfontstyle,
+                        }}>
+                        OTHER
+                      </Text>
+                    </View>
+                  </RadioButton.Group>
+                </View>
+              </View>
+            </View>
+
+            <View style={ponstyle.nxt_btnView}>
+              <View style={ponstyle.nxt_btnView1}></View>
+              <View style={ponstyle.nxt_btnView2}>
+                <Button
+                  mode="contained"
+                  style={ponstyle.nxt_btn}
+                  // style={{
+                  //     backgroundColor: '#30D20D', alignSelf: 'flex-end', width: '30%'
+                  //     , marginEnd: 12, marginTop: 25, borderRadius: 10
+                  // }}
+                  onPress={() => {
+                    this.next();
+                  }}>
+                  NEXT
+                </Button>
+              </View>
+            </View>
+
+            {this.state.show && (
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={this.state.currDate}
+                mode={this.state.mode}
+                is24Hour={false}
+                display="default"
+                onChange={this.onDateTimeChange}
+                maximumDate={new Date()}
+              />
+            )}
+            {this.state.dobCal ? (
+              <DateTimePicker
+                testID="datePicker"
+                value={this.state.bde}
+                mode="date"
+                display="default"
+                onChange={this.dobChange}
+                maximumDate={this.state.bde}
+              />
+            ) : null}
+
+            {/* </View> */}
+          </ScrollView>
+        </KeyboardAvoidingView>
         <DashboardFooter
           navigation={navigation}
           style={{position: 'absolute', bottom: 0}}
         />
-      
       </SafeAreaView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  keyboard: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+});

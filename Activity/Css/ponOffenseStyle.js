@@ -6,10 +6,12 @@ import {
 import Global_Attributes from '../../Utility/Global_Attributes';
 
 const ponsoffnStyle = StyleSheet.create({
+
   mainView: {
     backgroundColor: '#DEE6E1',
     flex: 1,
   },
+
   Scrollview: {
     // // alignSelf: 'center',
     // margin: '3%',
@@ -22,11 +24,11 @@ const ponsoffnStyle = StyleSheet.create({
     alignSelf: 'center',
     margin: '1%',
     marginTop: '3%',
-
     width: '95%',
     backgroundColor: '#FFFFFF',
     marginBottom: '20%',
   },
+
   bottomView: {
     flex: 0.1,
   },
@@ -75,7 +77,6 @@ const ponsoffnStyle = StyleSheet.create({
     marginVertical: '5%',
     color: 'black',
     alignSelf: 'stretch',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   actTitleFlatlist: {
     maxWidth: '100%',
@@ -102,7 +103,6 @@ const ponsoffnStyle = StyleSheet.create({
   loc_code_txt: {
     color: '#11246F',
     fontWeight: 'bold',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   loc_code: {
     fontWeight: 'bold',
@@ -131,7 +131,6 @@ const ponsoffnStyle = StyleSheet.create({
   offn_no: {
     color: '#11246F',
     fontWeight: 'bold',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   // formt_txt: {
   //     fontWeight: 'bold',
@@ -144,7 +143,6 @@ const ponsoffnStyle = StyleSheet.create({
   offr_name: {
     color: '#000000',
     padding: '4%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   main_view_status: {
     flex: 1,
@@ -167,7 +165,6 @@ const ponsoffnStyle = StyleSheet.create({
     textAlign: 'center',
     marginStart: '15%',
     bottom: '20%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   sec_status: {
     backgroundColor: '#30D20D',
@@ -178,7 +175,6 @@ const ponsoffnStyle = StyleSheet.create({
     textAlign: 'center',
     alignSelf: 'center',
     bottom: '55%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   third_status: {
     backgroundColor: '#DEE6E1',
@@ -190,7 +186,6 @@ const ponsoffnStyle = StyleSheet.create({
     bottom: '86%',
     alignSelf: 'flex-end',
     marginRight: '16%',
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   info_txt: {
@@ -198,21 +193,18 @@ const ponsoffnStyle = StyleSheet.create({
     bottom: '80%',
     start: '15%',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   offn_txt: {
     color: '#11246F',
     bottom: '105%',
     alignSelf: 'center',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   review_txt: {
     color: '#11246F',
     bottom: '130%',
     start: '76%',
     fontSize: 12,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
   mv_view: {
     flex: 1,
@@ -234,7 +226,6 @@ const ponsoffnStyle = StyleSheet.create({
     // paddingLeft:"2%",
     color: '#7B7B7B',
     fontSize: 14,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   colsn_txt: {
@@ -242,7 +233,6 @@ const ponsoffnStyle = StyleSheet.create({
     justifyContent: 'center',
     color: '#7B7B7B',
     fontSize: 14,
-    fontFamily: Global_Attributes.fixfontstyle,
     // paddingTop: "11%",
   },
 
@@ -307,7 +297,6 @@ const ponsoffnStyle = StyleSheet.create({
     fontSize: 12,
     marginEnd: '2%',
     height: 55,
-    fontFamily: Global_Attributes.fixfontstyle,
     color: 'black',
   },
 
@@ -347,7 +336,6 @@ const ponsoffnStyle = StyleSheet.create({
     marginRight: '2%',
     fontSize: 12,
     height: 55,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   inputTextStyleTwo: {
@@ -357,7 +345,6 @@ const ponsoffnStyle = StyleSheet.create({
     fontSize: 12,
     marginEnd: '2%',
     height: 60,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   loc_img: {
@@ -376,7 +363,7 @@ const ponsoffnStyle = StyleSheet.create({
 
   contrView: {
     flexDirection: 'column',
-    height: 55,
+    height: 45,
     marginTop: '10%',
     marginStart: '4%',
     marginEnd: '2%',
@@ -387,7 +374,7 @@ const ponsoffnStyle = StyleSheet.create({
     height: 12,
     position: 'absolute',
     right: '9%',
-    bottom: '100%',
+    top:5
   },
 
   inputTextcodeView: {
@@ -401,14 +388,12 @@ const ponsoffnStyle = StyleSheet.create({
     paddingLeft: '23%',
     color: '#7B7B7B',
     fontSize: 14,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   nscText: {
     paddingLeft: '25%',
     color: '#7B7B7B',
     fontSize: 14,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   commrText: {
@@ -416,7 +401,6 @@ const ponsoffnStyle = StyleSheet.create({
     color: '#7B7B7B',
     marginStart: '5%',
     fontSize: 14,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   secCheckboxView: {
@@ -451,7 +435,6 @@ const ponsoffnStyle = StyleSheet.create({
     width: '100%',
     backgroundColor: '#ffffff',
     marginBottom: '5%',
-    fontFamily: Global_Attributes.fixfontstyle,
     alignSelf: 'flex-end',
     color: 'black',
   },
@@ -483,7 +466,6 @@ const ponsoffnStyle = StyleSheet.create({
     width: '31%',
     margin: '4%',
     borderRadius: 10,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
 
   nxtBtn: {
@@ -493,8 +475,8 @@ const ponsoffnStyle = StyleSheet.create({
     width: '31%',
     marginLeft: '26%',
     borderRadius: 10,
-    fontFamily: Global_Attributes.fixfontstyle,
   },
+
 });
 
 export default ponsoffnStyle;

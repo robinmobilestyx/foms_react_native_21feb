@@ -12,6 +12,8 @@ import {
   Alert,
   Keyboard,
   SectionList,
+  Platform,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 import {
@@ -533,544 +535,565 @@ export default class PonOffence extends Component {
 
     return (
       <SafeAreaView style={ponsoffnStyle.mainView}>
-        <ScrollView
-          scrollEnabled={true}
-          nestedScrollEnabled={true}
-          style={ponsoffnStyle.Scrollview}>
-          <View style={{flex: 1}}>
-            <View style={ponsoffnStyle.locationView}>
-              <View style={ponsoffnStyle.main_view_loc}>
-                <Text style={ponsoffnStyle.loc_code_txt}>Location Code</Text>
-                <Text style={ponsoffnStyle.loc_code}>
-                  {Global_Attributes.PonOneBean['locationCode']}
-                </Text>
-              </View>
-              <View style={ponsoffnStyle.sec_main_view}></View>
-              <View style={ponsoffnStyle.secc_main_view}>
-                <Text style={ponsoffnStyle.offn_no}>Offence Number</Text>
-                <Text style={ponsoffnStyle.loc_code1}>
-                  {Global_Attributes.PonOneBean['formatted']}
-                </Text>
-              </View>
-            </View>
-            <View style={ponsoffnStyle.offr_name_view}>
-              <Text style={ponsoffnStyle.offr_name}>
-                Officer Name : {Global_Attributes.PonOneBean['officerName']}
-              </Text>
-            </View>
-            <View style={ponsoffnStyle.main_view_status}>
-              <View style={ponsoffnStyle.view_status}></View>
-              <Text style={ponsoffnStyle.first_status}>1</Text>
-              <Text style={ponsoffnStyle.sec_status}>2</Text>
-              <Text style={ponsoffnStyle.third_status}>3</Text>
-              <Text style={ponsoffnStyle.info_txt}>Info</Text>
-              <Text style={ponsoffnStyle.offn_txt}>Offence</Text>
-              <Text style={ponsoffnStyle.review_txt}>Review</Text>
-            </View>
-            <View style={ponsoffnStyle.mv_view}>
-              <View style={ponsoffnStyle.mvi_view}>
-                <Text style={ponsoffnStyle.mvi_txt}>
-                  Motor Vehicle Involved
-                </Text>
-                <View style={ponsoffnStyle.firstCheckbx}>
-                  <CheckBox
-                    checked={this.state.motorInvolved}
-                    // style={{ marginStart: 30, marginTop: 10 }}
-                    onValueChange={() => this.motorCheckBoxChanged()}
-                    unCheckedBorderColor={'#808080'}
-                    checkedBackgroundColor={'#11246F'}
-                    checkedBorderColor={'#11246F'}
-                    borderWidth={2}
-                    checkMarkColor={'white'}
-                    checkMarkSize={18}
-                    animationType={'left'}
-                    size={18}
-                    rippleEffect={false}
-                    label="NO"
-                    labelStyle={{
-                      color: '#11246e',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}></CheckBox>
-                  {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>No</Text> */}
+        <KeyboardAvoidingView
+          style={styles.keyboard}
+          behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+          enabled
+          keyboardVerticalOffset={10}>
+          <ScrollView
+            scrollEnabled={true}
+            nestedScrollEnabled={true}
+            style={ponsoffnStyle.Scrollview}>
+            <View style={{flex: 1}}>
+              <View style={ponsoffnStyle.locationView}>
+                <View style={ponsoffnStyle.main_view_loc}>
+                  <Text style={ponsoffnStyle.loc_code_txt}>Location Code</Text>
+                  <Text style={ponsoffnStyle.loc_code}>
+                    {Global_Attributes.PonOneBean['locationCode']}
+                  </Text>
+                </View>
+                <View style={ponsoffnStyle.sec_main_view}></View>
+                <View style={ponsoffnStyle.secc_main_view}>
+                  <Text style={ponsoffnStyle.offn_no}>Offence Number</Text>
+                  <Text style={ponsoffnStyle.loc_code1}>
+                    {Global_Attributes.PonOneBean['formatted']}
+                  </Text>
                 </View>
               </View>
-              <View style={ponsoffnStyle.cols_view}>
-                <Text style={ponsoffnStyle.colsn_txt}>Collision Involved</Text>
-                <View style={ponsoffnStyle.secCheckbx}>
-                  <CheckBox
-                    checked={this.state.collision}
-                    style={{marginStart: 30, marginTop: 20}}
-                    // checkBoxColor='#11246F'
-                    onValueChange={() => this.collisionCheckBoxChanged()}
-                    checkedBackgroundColor={'#11246F'}
-                    checkedBorderColor={'#11246F'}
-                    unCheckedBorderColor={'#808080'}
-                    borderWidth={2}
-                    checkMarkColor={'white'}
-                    checkMarkSize={18}
-                    animationType={'left'}
-                    size={18}
-                    rippleEffect={false}
-                    label="YES"
-                    labelStyle={{
-                      color: '#11246e',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}></CheckBox>
-                  {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>No</Text> */}
-                </View>
+              <View style={ponsoffnStyle.offr_name_view}>
+                <Text style={ponsoffnStyle.offr_name}>
+                  Officer Name : {Global_Attributes.PonOneBean['officerName']}
+                </Text>
               </View>
-              <View style={ponsoffnStyle.wittn_view}>
-                <Text style={ponsoffnStyle.colsn_txt}>Witnesses</Text>
-                <View style={ponsoffnStyle.thirdCheckbx}>
-                  <CheckBox
-                    checked={this.state.withnesses}
-                    style={{marginStart: 30, marginTop: 10}}
-                    checkBoxColor={'#11246F'}
-                    onValueChange={() => this.WitnesCheckBoxChanged()}
-                    checkedBackgroundColor={'#11246F'}
-                    checkedBorderColor="#11246F"
-                    borderWidth={2}
-                    unCheckedBorderColor={'#808080'}
-                    checkMarkColor={'white'}
-                    checkMarkSize={18}
-                    animationType={'left'}
-                    size={18}
-                    rippleEffect={false}
-                    label="YES"
-                    labelStyle={{
-                      color: '#11246e',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}></CheckBox>
-                  {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>No</Text> */}
-                </View>
+              <View style={ponsoffnStyle.main_view_status}>
+                <View style={ponsoffnStyle.view_status}></View>
+                <Text style={ponsoffnStyle.first_status}>1</Text>
+                <Text style={ponsoffnStyle.sec_status}>2</Text>
+                <Text style={ponsoffnStyle.third_status}>3</Text>
+                <Text style={ponsoffnStyle.info_txt}>Info</Text>
+                <Text style={ponsoffnStyle.offn_txt}>Offence</Text>
+                <Text style={ponsoffnStyle.review_txt}>Review</Text>
               </View>
-            </View>
-
-            <View style={ponsoffnStyle.atNearView}>
-              <View style={ponsoffnStyle.main_text_views}>
-                <PopoverContainer>
-                  <Popover
-                    placement={'auto'}
-                    arrowHeight={0}
-                    isVisible={this.state.atmodalVisible}
-                    pointerEvents="auto"
-                    disablePortal={false}
-                    component={() => (
-                      <ScrollView
-                        style={{
-                          shadowColor: 'black',
-                          shadowOpacity: 0.5,
-                          backgroundColor: 'white',
-                          elevation: 10,
-                          height: '250%',
-                          width: '100%',
-                        }}>
-                        <FlatList
-                          nestedScrollEnabled={true}
-                          keyboardShouldPersistTaps={'handled'}
-                          data={this.state.AT}
-                          renderItem={({item}) => {
-                            return (
-                              <View style={{left: 10, right: 10}}>
-                                <TouchableOpacity
-                                  onPress={() =>
-                                    this.setState({
-                                      attextinputvalue: item,
-                                      AT: '',
-                                      atmodalVisible: false,
-                                    })
-                                  }>
-                                  <Text style={ponsoffnStyle.itemText}>
-                                    {item}
-                                  </Text>
-                                </TouchableOpacity>
-                              </View>
-                            );
-                          }}
-                          ItemSeparatorComponent={this.renderSeparator}
-                          keyExtractor={item => item}
-                        />
-                      </ScrollView>
-                    )}>
-                    <TextInput
-                      value={this.state.attextinputvalue}
-                      style={ponsoffnStyle.inputAT}
-                      onChangeText={text =>
-                        this.setState({attextinputvalue: this.AT(text)})
-                      }
-                      label="AT*"
+              <View style={ponsoffnStyle.mv_view}>
+                <View style={ponsoffnStyle.mvi_view}>
+                  <Text style={ponsoffnStyle.mvi_txt}>
+                    Motor Vehicle Involved
+                  </Text>
+                  <View style={ponsoffnStyle.firstCheckbx}>
+                    <CheckBox
+                      checked={this.state.motorInvolved}
+                      // style={{ marginStart: 30, marginTop: 10 }}
+                      onValueChange={() => this.motorCheckBoxChanged()}
+                      unCheckedBorderColor={'#808080'}
+                      checkedBackgroundColor={'#11246F'}
+                      checkedBorderColor={'#11246F'}
+                      borderWidth={2}
+                      checkMarkColor={'white'}
+                      checkMarkSize={18}
+                      animationType={'left'}
+                      size={18}
+                      rippleEffect={false}
+                      label="NO"
                       labelStyle={{
-                        fontSize: 12,
+                        color: '#11246e',
                         fontFamily: Global_Attributes.fixfontstyle,
-                      }}
-                      underlineColor={'#000000'}
-                    />
-                  </Popover>
-                </PopoverContainer>
-              </View>
-
-              <View style={ponsoffnStyle.main_text_views}>
-                <PopoverContainer>
-                  <Popover
-                    placement={'auto'}
-                    arrowHeight={0}
-                    isVisible={this.state.nearmodalVisible}
-                    pointerEvents="auto"
-                    component={() => (
-                      <ScrollView
-                        style={{
-                          shadowColor: 'black',
-                          shadowOpacity: 0.5,
-                          backgroundColor: 'white',
-                          elevation: 10,
-                          height: '250%',
-                          width: '100%',
-                        }}>
-                        <FlatList
-                          nestedScrollEnabled={true}
-                          keyboardShouldPersistTaps={'always'}
-                          data={this.state.NEAR}
-                          renderItem={({item}) => {
-                            return (
-                              <View style={{left: 10, right: 10}}>
-                                <TouchableOpacity
-                                  onPress={() =>
-                                    this.setState({
-                                      neartextinputvalue: item,
-                                      NEAR: '',
-                                      nearmodalVisible: false,
-                                    })
-                                  }>
-                                  <Text style={ponsoffnStyle.itemText}>
-                                    {item}
-                                  </Text>
-                                </TouchableOpacity>
-                              </View>
-                            );
-                          }}
-                          ItemSeparatorComponent={this.renderSeparator}
-                          keyExtractor={item => item}
-                        />
-                      </ScrollView>
-                    )}>
-                    <TextInput
-                      value={this.state.neartextinputvalue}
-                      style={ponsoffnStyle.inputAT}
-                      onChangeText={text =>
-                        this.setState({neartextinputvalue: this.NEAR(text)})
-                      }
-                      label="NEAR"
+                      }}></CheckBox>
+                    {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>No</Text> */}
+                  </View>
+                </View>
+                <View style={ponsoffnStyle.cols_view}>
+                  <Text style={ponsoffnStyle.colsn_txt}>
+                    Collision Involved
+                  </Text>
+                  <View style={ponsoffnStyle.secCheckbx}>
+                    <CheckBox
+                      checked={this.state.collision}
+                      style={{marginStart: 30, marginTop: 20}}
+                      // checkBoxColor='#11246F'
+                      onValueChange={() => this.collisionCheckBoxChanged()}
+                      checkedBackgroundColor={'#11246F'}
+                      checkedBorderColor={'#11246F'}
+                      unCheckedBorderColor={'#808080'}
+                      borderWidth={2}
+                      checkMarkColor={'white'}
+                      checkMarkSize={18}
+                      animationType={'left'}
+                      size={18}
+                      rippleEffect={false}
+                      label="YES"
                       labelStyle={{
-                        fontSize: 12,
+                        color: '#11246e',
                         fontFamily: Global_Attributes.fixfontstyle,
-                      }}
-                      underlineColor={'#000000'}
-                    />
-                  </Popover>
-                </PopoverContainer>
+                      }}></CheckBox>
+                    {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>No</Text> */}
+                  </View>
+                </View>
+                <View style={ponsoffnStyle.wittn_view}>
+                  <Text style={ponsoffnStyle.colsn_txt}>Witnesses</Text>
+                  <View style={ponsoffnStyle.thirdCheckbx}>
+                    <CheckBox
+                      checked={this.state.withnesses}
+                      style={{marginStart: 30, marginTop: 10}}
+                      checkBoxColor={'#11246F'}
+                      onValueChange={() => this.WitnesCheckBoxChanged()}
+                      checkedBackgroundColor={'#11246F'}
+                      checkedBorderColor="#11246F"
+                      borderWidth={2}
+                      unCheckedBorderColor={'#808080'}
+                      checkMarkColor={'white'}
+                      checkMarkSize={18}
+                      animationType={'left'}
+                      size={18}
+                      rippleEffect={false}
+                      label="YES"
+                      labelStyle={{
+                        color: '#11246e',
+                        fontFamily: Global_Attributes.fixfontstyle,
+                      }}></CheckBox>
+                    {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>No</Text> */}
+                  </View>
+                </View>
               </View>
-            </View>
 
-            <View style={ponsoffnStyle.blankTextView}>
-              <View style={ponsoffnStyle.blankTextView1}>
-                <TextInput
+              <View style={ponsoffnStyle.atNearView}>
+                <View style={ponsoffnStyle.main_text_views}>
+                  <PopoverContainer>
+                    <Popover
+                      placement={'auto'}
+                      arrowHeight={0}
+                      isVisible={this.state.atmodalVisible}
+                      pointerEvents="auto"
+                      disablePortal={false}
+                      component={() => (
+                        <ScrollView
+                          style={{
+                            shadowColor: 'black',
+                            shadowOpacity: 0.5,
+                            backgroundColor: 'white',
+                            elevation: 10,
+                            height: '250%',
+                            width: '100%',
+                          }}>
+                          <FlatList
+                            nestedScrollEnabled={true}
+                            keyboardShouldPersistTaps={'handled'}
+                            data={this.state.AT}
+                            renderItem={({item}) => {
+                              return (
+                                <View style={{left: 10, right: 10}}>
+                                  <TouchableOpacity
+                                    onPress={() =>
+                                      this.setState({
+                                        attextinputvalue: item,
+                                        AT: '',
+                                        atmodalVisible: false,
+                                      })
+                                    }>
+                                    <Text style={ponsoffnStyle.itemText}>
+                                      {item}
+                                    </Text>
+                                  </TouchableOpacity>
+                                </View>
+                              );
+                            }}
+                            ItemSeparatorComponent={this.renderSeparator}
+                            keyExtractor={item => item}
+                          />
+                        </ScrollView>
+                      )}>
+                      <TextInput
+                        value={this.state.attextinputvalue}
+                        style={ponsoffnStyle.inputAT}
+                        onChangeText={text =>
+                          this.setState({attextinputvalue: this.AT(text)})
+                        }
+                        label="AT*"
+                        labelStyle={{
+                          fontSize: 12,
+                          fontFamily: Global_Attributes.fixfontstyle,
+                        }}
+                        underlineColor={'#000000'}
+                      />
+                    </Popover>
+                  </PopoverContainer>
+                </View>
+
+                <View style={ponsoffnStyle.main_text_views}>
+                  <PopoverContainer>
+                    <Popover
+                      placement={'auto'}
+                      arrowHeight={0}
+                      isVisible={this.state.nearmodalVisible}
+                      pointerEvents="auto"
+                      component={() => (
+                        <ScrollView
+                          style={{
+                            shadowColor: 'black',
+                            shadowOpacity: 0.5,
+                            backgroundColor: 'white',
+                            elevation: 10,
+                            height: '250%',
+                            width: '100%',
+                          }}>
+                          <FlatList
+                            nestedScrollEnabled={true}
+                            keyboardShouldPersistTaps={'always'}
+                            data={this.state.NEAR}
+                            renderItem={({item}) => {
+                              return (
+                                <View style={{left: 10, right: 10}}>
+                                  <TouchableOpacity
+                                    onPress={() =>
+                                      this.setState({
+                                        neartextinputvalue: item,
+                                        NEAR: '',
+                                        nearmodalVisible: false,
+                                      })
+                                    }>
+                                    <Text style={ponsoffnStyle.itemText}>
+                                      {item}
+                                    </Text>
+                                  </TouchableOpacity>
+                                </View>
+                              );
+                            }}
+                            ItemSeparatorComponent={this.renderSeparator}
+                            keyExtractor={item => item}
+                          />
+                        </ScrollView>
+                      )}>
+                      <TextInput
+                        value={this.state.neartextinputvalue}
+                        style={ponsoffnStyle.inputAT}
+                        onChangeText={text =>
+                          this.setState({neartextinputvalue: this.NEAR(text)})
+                        }
+                        label="NEAR"
+                        labelStyle={{
+                          fontSize: 12,
+                          fontFamily: Global_Attributes.fixfontstyle,
+                        }}
+                        underlineColor={'#000000'}
+                      />
+                    </Popover>
+                  </PopoverContainer>
+                </View>
+              </View>
+
+              <View style={ponsoffnStyle.blankTextView}>
+                <View style={ponsoffnStyle.blankTextView1}>
+                  <TextInput
+                    style={{
+                      width: '95%',
+                      backgroundColor: '#ffffff',
+                      fontSize: 12,
+                      height: 55,
+                      fontFamily: Global_Attributes.fixfontstyle,
+                    }}
+                    theme={{colors: {text: '#11246F'}}}
+                    underlineColor={'#000000'}
+                    value={this.state.atThree}
+                    onChangeText={text => {
+                      this.setState({atThree: text});
+                    }}></TextInput>
+                </View>
+                <View style={ponsoffnStyle.blankTextView2}>
+                  <TouchableOpacity onPress={() => this.getLocation()}>
+                    <Image
+                      style={ponsoffnStyle.loc_img}
+                      source={checkIn}></Image>
+                  </TouchableOpacity>
+                </View>
+                <View style={ponsoffnStyle.blankTextView3}>
+                  <TouchableOpacity onPress={() => this.prevLocation()}>
+                    <Image
+                      style={ponsoffnStyle.refr_img}
+                      source={prevsLocation}></Image>
+                  </TouchableOpacity>
+                </View>
+              </View>
+
+              <View style={ponsoffnStyle.contrView}>
+                <Text
                   style={{
-                    width: '95%',
-                    backgroundColor: '#ffffff',
-                    fontSize: 12,
-                    height: 55,
+                    color: '#7B7B7B',
+                    fontSize: 14,
+                    bottom: 10,
                     fontFamily: Global_Attributes.fixfontstyle,
-                  }}
-                  theme={{colors: {text: '#11246F'}}}
-                  underlineColor={'#000000'}
-                  value={this.state.atThree}
-                  onChangeText={text => {
-                    this.setState({atThree: text});
-                  }}></TextInput>
-              </View>
-              <View style={ponsoffnStyle.blankTextView2}>
-                <TouchableOpacity onPress={() => this.getLocation()}>
-                  <Image style={ponsoffnStyle.loc_img} source={checkIn}></Image>
-                </TouchableOpacity>
-              </View>
-              <View style={ponsoffnStyle.blankTextView3}>
-                <TouchableOpacity onPress={() => this.prevLocation()}>
+                  }}>
+                  CONTRARY TO*
+                </Text>
+                <View>
+                  <ModalDropdown
+                    dropdownStyle={{height: 50}}
+                    dropdownTextStyle={{fontSize: 17, color: 'black'}}
+                    textStyle={{
+                      color: 'black',
+                      fontSize: 15,
+                    }}
+                    animated={true}
+                    defaultIndex={0}
+                    defaultValue={Global_Attributes.PonLaws['parent_law'][0]}
+                    options={Global_Attributes.PonLaws['parent_law']}
+                    onSelect={id => {
+                      this.fetchLawsTitle(
+                        Global_Attributes.PonLaws['parent_law_id'][id],
+                      );
+                    }}
+                  />
                   <Image
-                    style={ponsoffnStyle.refr_img}
-                    source={prevsLocation}></Image>
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            <View style={ponsoffnStyle.contrView}>
-              <Text
-                style={{
-                  color: '#7B7B7B',
-                  fontSize: 14,
-                  bottom: 10,
-                  fontFamily: Global_Attributes.fixfontstyle,
-                }}>
-                CONTRARY TO*
-              </Text>
-              <View>
-                <ModalDropdown
-                  dropdownStyle={{height: 50}}
-                  dropdownTextStyle={{fontSize: 17, color: 'black'}}
-                  textStyle={{
-                    color: 'black',
-                    fontSize: 17,
-                    fontFamily: Global_Attributes.fixfontstyle,
-                  }}
-                  animated={true}
-                  defaultIndex={0}
-                  defaultValue={Global_Attributes.PonLaws['parent_law'][0]}
-                  options={Global_Attributes.PonLaws['parent_law']}
-                  onSelect={id => {
-                    this.fetchLawsTitle(
-                      Global_Attributes.PonLaws['parent_law_id'][id],
-                    );
-                  }}
-                />
-                <Image
-                  source={Dropdownarrow}
-                  style={ponsoffnStyle.drpImgStyle}
-                />
-              </View>
-            </View>
-
-            <LawsSearch PonOffence={true} navigation={this.props.navigation} />
-
-            <View style={ponsoffnStyle.inputTextView}>
-              <View style={ponsoffnStyle.main_text_views}>
-                <TextInput
-                  style={ponsoffnStyle.inputTextStyleTwo}
-                  label="PLATE NUMBER"
-                  underlineColor={'#000000'}
-                  labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
-                  value={this.state.plateNumber}
-                  maxLength={8}
-                  onChangeText={text => {
-                    this.setState({plateNumber: text});
-                  }}></TextInput>
-              </View>
-
-              <View style={ponsoffnStyle.main_text_views}>
-                <TextInput
-                  style={ponsoffnStyle.inputTextStyleTwo}
-                  placeholderTextColor="red"
-                  label="JURIS"
-                  labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
-                  theme={{colors: {text: '#11246F'}}}
-                  value="ON"
-                  underlineColor={'#000000'}
-                />
-              </View>
-            </View>
-
-            <View style={ponsoffnStyle.inputTextcodeView}>
-              <TextInput
-                style={ponsoffnStyle.inputTextStyle}
-                value={this.state.code}
-                labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
-                placeholder="username"
-                onChangeText={text => {
-                  this.setState({code: text});
-                }}
-                label="CODE"
-                underlineColor={'#000000'}></TextInput>
-            </View>
-
-            <View style={ponsoffnStyle.secCheckboxView}>
-              <View style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
-                {/* <View style={{ flex:0.5, flexDirection: 'row' }}> */}
-                <Text style={ponsoffnStyle.cvorText}>CVOR</Text>
-                <View style={{paddingLeft: '15%'}}>
-                  <CheckBox
-                    checked={this.state.cvor}
-                    // style={{ marginStart: 30, marginTop: 10 }}
-                    checkBoxColor={'#11246F'}
-                    onValueChange={() => this.CvorCheckBoxChanged()}
-                    checkedBackgroundColor={'#11246F'}
-                    checkedBorderColor="#11246F"
-                    borderWidth={2}
-                    unCheckedBorderColor={'#808080'}
-                    checkMarkColor={'white'}
-                    checkMarkSize={18}
-                    animationType={'left'}
-                    size={18}
-                    rippleEffect={false}
-                    label="YES"
-                    labelStyle={{
-                      color: '#11246F',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}></CheckBox>
-                  {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
+                    source={Dropdownarrow}
+                    style={ponsoffnStyle.drpImgStyle}
+                  />
                 </View>
               </View>
 
-              <View style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
-                <Text style={ponsoffnStyle.nscText}>NSC</Text>
-                <View style={{marginLeft: '17%'}}>
-                  <CheckBox
-                    checked={this.state.nsc}
-                    style={{marginStart: 30, marginTop: 10}}
-                    checkBoxColor={'#11246F'}
-                    onValueChange={() => this.NscCheckBoxChanged()}
-                    checkedBackgroundColor={'#11246F'}
-                    checkedBorderColor="#11246F"
-                    borderWidth={2}
-                    unCheckedBorderColor={'#808080'}
-                    checkMarkColor={'white'}
-                    checkMarkSize={18}
-                    animationType={'left'}
-                    size={18}
-                    rippleEffect={false}
-                    label="YES"
-                    labelStyle={{
-                      color: '#11246F',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}></CheckBox>
-                  {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
+              <LawsSearch
+                PonOffence={true}
+                navigation={this.props.navigation}
+              />
+
+              <View style={ponsoffnStyle.inputTextView}>
+                <View style={ponsoffnStyle.main_text_views}>
+                  <TextInput
+                    style={ponsoffnStyle.inputTextStyleTwo}
+                    label="PLATE NUMBER"
+                    underlineColor={'#000000'}
+                    labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
+                    value={this.state.plateNumber}
+                    maxLength={8}
+                    onChangeText={text => {
+                      this.setState({plateNumber: text});
+                    }}></TextInput>
+                </View>
+
+                <View style={ponsoffnStyle.main_text_views}>
+                  <TextInput
+                    style={ponsoffnStyle.inputTextStyleTwo}
+                    placeholderTextColor="red"
+                    label="JURIS"
+                    labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
+                    theme={{colors: {text: '#11246F'}}}
+                    value="ON"
+                    underlineColor={'#000000'}
+                  />
                 </View>
               </View>
 
-              <View style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
-                <Text style={ponsoffnStyle.commrText}>Commercial</Text>
-                <View style={{marginLeft: '15%'}}>
-                  <CheckBox
-                    checked={this.state.commercial}
-                    style={{marginStart: 30, marginTop: 10}}
-                    checkBoxColor={'#11246F'}
-                    onValueChange={() => this.commercialCheckBoxChanged()}
-                    checkedBackgroundColor={'#11246F'}
-                    checkedBorderColor="#11246F"
-                    borderWidth={2}
-                    unCheckedBorderColor={'#808080'}
-                    checkMarkColor={'white'}
-                    checkMarkSize={18}
-                    animationType={'left'}
-                    size={18}
-                    rippleEffect={false}
-                    label="YES"
-                    labelStyle={{
-                      color: '#11246F',
-                      fontFamily: Global_Attributes.fixfontstyle,
-                    }}></CheckBox>
-                  {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
-                </View>
-              </View>
-            </View>
-
-            {this.state.cvor || this.state.nsc ? (
               <View style={ponsoffnStyle.inputTextcodeView}>
                 <TextInput
                   style={ponsoffnStyle.inputTextStyle}
-                  value={this.state.covrNumer}
-                  onChangeText={text => {
-                    this.setState({covrNumer: text});
-                  }}
+                  value={this.state.code}
                   labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
-                  label="CVOR/NSC Number*"
+                  placeholder="username"
+                  onChangeText={text => {
+                    this.setState({code: text});
+                  }}
+                  label="CODE"
                   underlineColor={'#000000'}></TextInput>
               </View>
-            ) : null}
 
-            <View style={ponsoffnStyle.fineBoxView}>
-              <View style={ponsoffnStyle.insidefineBoxView}>
-                <Text
-                  style={{
-                    color: '#7B7B7B',
-                    fontSize: 12,
-                    fontFamily: Global_Attributes.fixfontstyle,
-                  }}>
-                  SET FINE OF*
-                </Text>
+              <View style={ponsoffnStyle.secCheckboxView}>
+                <View
+                  style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
+                  {/* <View style={{ flex:0.5, flexDirection: 'row' }}> */}
+                  <Text style={ponsoffnStyle.cvorText}>CVOR</Text>
+                  <View style={{paddingLeft: '15%'}}>
+                    <CheckBox
+                      checked={this.state.cvor}
+                      // style={{ marginStart: 30, marginTop: 10 }}
+                      checkBoxColor={'#11246F'}
+                      onValueChange={() => this.CvorCheckBoxChanged()}
+                      checkedBackgroundColor={'#11246F'}
+                      checkedBorderColor="#11246F"
+                      borderWidth={2}
+                      unCheckedBorderColor={'#808080'}
+                      checkMarkColor={'white'}
+                      checkMarkSize={18}
+                      animationType={'left'}
+                      size={18}
+                      rippleEffect={false}
+                      label="YES"
+                      labelStyle={{
+                        color: '#11246F',
+                        fontFamily: Global_Attributes.fixfontstyle,
+                      }}></CheckBox>
+                    {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
+                  </View>
+                </View>
 
-                <TextInput
-                  value={this.state.fine}
-                  style={ponsoffnStyle.boxstyle}
-                  mode="outlined"
-                  outlineColor="#11246F"
-                  selectionColor={'#7B7B7B'}
-                  onChangeText={text => this.setState({fine: text})}
-                />
+                <View
+                  style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
+                  <Text style={ponsoffnStyle.nscText}>NSC</Text>
+                  <View style={{marginLeft: '17%'}}>
+                    <CheckBox
+                      checked={this.state.nsc}
+                      style={{marginStart: 30, marginTop: 10}}
+                      checkBoxColor={'#11246F'}
+                      onValueChange={() => this.NscCheckBoxChanged()}
+                      checkedBackgroundColor={'#11246F'}
+                      checkedBorderColor="#11246F"
+                      borderWidth={2}
+                      unCheckedBorderColor={'#808080'}
+                      checkMarkColor={'white'}
+                      checkMarkSize={18}
+                      animationType={'left'}
+                      size={18}
+                      rippleEffect={false}
+                      label="YES"
+                      labelStyle={{
+                        color: '#11246F',
+                        fontFamily: Global_Attributes.fixfontstyle,
+                      }}></CheckBox>
+                    {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
+                  </View>
+                </View>
 
-                {/* <TextInput value={this.state.fine} style={ponsoffnStyle.boxstyle} ></TextInput> */}
+                <View
+                  style={{flexDirection: 'column', flex: 1, marginTop: '5%'}}>
+                  <Text style={ponsoffnStyle.commrText}>Commercial</Text>
+                  <View style={{marginLeft: '15%'}}>
+                    <CheckBox
+                      checked={this.state.commercial}
+                      style={{marginStart: 30, marginTop: 10}}
+                      checkBoxColor={'#11246F'}
+                      onValueChange={() => this.commercialCheckBoxChanged()}
+                      checkedBackgroundColor={'#11246F'}
+                      checkedBorderColor="#11246F"
+                      borderWidth={2}
+                      unCheckedBorderColor={'#808080'}
+                      checkMarkColor={'white'}
+                      checkMarkSize={18}
+                      animationType={'left'}
+                      size={18}
+                      rippleEffect={false}
+                      label="YES"
+                      labelStyle={{
+                        color: '#11246F',
+                        fontFamily: Global_Attributes.fixfontstyle,
+                      }}></CheckBox>
+                    {/* <Text style={{ paddingTop: "8%", color: 'darkblue' }}>Yes</Text> */}
+                  </View>
+                </View>
               </View>
-              <View style={ponsoffnStyle.insidefineBoxView1}>
-                <Text
+
+              {this.state.cvor || this.state.nsc ? (
+                <View style={ponsoffnStyle.inputTextcodeView}>
+                  <TextInput
+                    style={ponsoffnStyle.inputTextStyle}
+                    value={this.state.covrNumer}
+                    onChangeText={text => {
+                      this.setState({covrNumer: text});
+                    }}
+                    labelStyle={{fontFamily: Global_Attributes.fixfontstyle}}
+                    label="CVOR/NSC Number*"
+                    underlineColor={'#000000'}></TextInput>
+                </View>
+              ) : null}
+
+              <View style={ponsoffnStyle.fineBoxView}>
+                <View style={ponsoffnStyle.insidefineBoxView}>
+                  <Text
+                    style={{
+                      color: '#7B7B7B',
+                      fontSize: 12,
+                      fontFamily: Global_Attributes.fixfontstyle,
+                    }}>
+                    SET FINE OF*
+                  </Text>
+
+                  <TextInput
+                    value={this.state.fine}
+                    style={ponsoffnStyle.boxstyle}
+                    mode="outlined"
+                    outlineColor="#11246F"
+                    selectionColor={'#7B7B7B'}
+                    onChangeText={text => this.setState({fine: text})}
+                  />
+
+                  {/* <TextInput value={this.state.fine} style={ponsoffnStyle.boxstyle} ></TextInput> */}
+                </View>
+                <View style={ponsoffnStyle.insidefineBoxView1}>
+                  <Text
+                    style={{
+                      color: '#7B7B7B',
+                      fontSize: 12,
+                      fontFamily: Global_Attributes.fixfontstyle,
+                    }}>
+                    TOTAL PAYABLE*
+                  </Text>
+                  <TextInput
+                    value={this.state.payable}
+                    mode="outlined"
+                    style={ponsoffnStyle.boxstyle}
+                    outlineColor="#11246F"
+                    selectionColor={'#7B7B7B'}
+                    onChangeText={text =>
+                      this.setState({payable: text})
+                    }></TextInput>
+                  {/* <TextInput value={this.state.payable} style={ponsoffnStyle.boxstyle}></TextInput> */}
+                </View>
+              </View>
+
+              <View style={ponsoffnStyle.tnCView1}>
+                <View
                   style={{
-                    color: '#7B7B7B',
-                    fontSize: 12,
-                    fontFamily: Global_Attributes.fixfontstyle,
+                    marginLeft: '1%',
+                    marginRight: '1%',
+                    flexDirection: 'row',
                   }}>
-                  TOTAL PAYABLE*
-                </Text>
-                <TextInput
-                  value={this.state.payable}
-                  mode="outlined"
-                  style={ponsoffnStyle.boxstyle}
-                  outlineColor="#11246F"
-                  selectionColor={'#7B7B7B'}
-                  onChangeText={text =>
-                    this.setState({payable: text})
-                  }></TextInput>
-                {/* <TextInput value={this.state.payable} style={ponsoffnStyle.boxstyle}></TextInput> */}
+                  <CheckBox
+                    checked={this.state.concent}
+                    checkBoxColor={'#11246F'}
+                    onValueChange={() => this.checkBoxChanged()}
+                    checkedBackgroundColor={'#11246F'}
+                    checkedBorderColor={'#11246F'}
+                    borderWidth={2}
+                    checkMarkColor={'white'}
+                    unCheckedBorderColor={'#808080'}
+                    checkMarkSize={18}
+                    animationType={'left'}
+                    checkboxContainerStyle={{alignSelf: 'flex-start'}}
+                    size={18}
+                    rippleEffect={false}></CheckBox>
+                  <Text
+                    style={{
+                      color: 'black',
+                      fontWeight: 'bold',
+                      color: '#11246F',
+                      alignSelf: 'flex-start',
+                    }}>
+                    BY CHECKING THIS BOX, I ACKNOWLEDGE THAT I HAVE REVIEWED ALL
+                    THE INFORMATION CONTAINED WITHIN THIS DOCUMENT AND CONFIRM
+                    IT TO BE ACCURATE.
+                  </Text>
+                </View>
+              </View>
+
+              <View style={{flexDirection: 'row', flex: 1, marginTop: '5%'}}>
+                <Button
+                  mode="contained"
+                  style={ponsoffnStyle.backBtn}
+                  onPress={() => {
+                    this.back();
+                  }}>
+                  BACK
+                </Button>
+
+                <Button
+                  mode="contained"
+                  style={ponsoffnStyle.nxtBtn}
+                  onPress={() => {
+                    this.next();
+                  }}>
+                  NEXT
+                </Button>
               </View>
             </View>
 
-            <View style={ponsoffnStyle.tnCView1}>
-              <View style={{marginLeft: '1%', flexDirection: 'row'}}>
-                <CheckBox
-                  checked={this.state.concent}
-                  checkBoxColor={'#11246F'}
-                  onValueChange={() => this.checkBoxChanged()}
-                  checkedBackgroundColor={'#11246F'}
-                  checkedBorderColor={'#11246F'}
-                  borderWidth={2}
-                  checkMarkColor={'white'}
-                  unCheckedBorderColor={'#808080'}
-                  checkMarkSize={18}
-                  animationType={'left'}
-                  checkboxContainerStyle={{bottom: 25}}
-                  size={18}
-                  rippleEffect={false}></CheckBox>
-                <Text
-                  style={{
-                    color: 'black',
-                    fontWeight: 'bold',
-                    color: '#11246F',
-                  }}>
-                  BY CHECKING THIS BOX, I ACKNOWLEDGE THAT I HAVE REVIEWED ALL
-                  THE INFORMATION CONTAINED WITHIN THIS DOCUMENT AND CONFIRM IT
-                  TO BE ACCURATE.
-                </Text>
-              </View>
-            </View>
-
-            <View style={{flexDirection: 'row', flex: 1, marginTop: '5%'}}>
-              <Button
-                mode="contained"
-                style={ponsoffnStyle.backBtn}
-                onPress={() => {
-                  this.back();
-                }}>
-                BACK
-              </Button>
-
-              <Button
-                mode="contained"
-                style={ponsoffnStyle.nxtBtn}
-                onPress={() => {
-                  this.next();
-                }}>
-                NEXT
-              </Button>
-            </View>
-          </View>
-
-          <Loader loading={Global_Attributes.loading} />
-        </ScrollView>
+            <Loader loading={Global_Attributes.loading} />
+          </ScrollView>
+        </KeyboardAvoidingView>
         {/* {keyboardStatus === 'Keyboard Hidden' ?
               
             <View style={ponsoffnStyle.bottomView}>  */}
@@ -1104,6 +1127,11 @@ const styles = StyleSheet.create({
   },
   popoverText: {
     color: 'red',
+  },
+  keyboard: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
 });
 
